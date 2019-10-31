@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13f0a0ce-9745-4f5b-ba30-6b4795564315" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Home/HomePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
@@ -84,7 +83,7 @@
       <option name="presentableId" value="Default" />
       <updated>1572539423494</updated>
       <workItem from="1572539425077" duration="383000" />
-      <workItem from="1572539848635" duration="4566000" />
+      <workItem from="1572539848635" duration="5253000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1572541845823</created>
@@ -100,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572543218447</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added style and color">
+      <created>1572544445558</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1572544445558</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +128,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="added router and first pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="added router and first pages" />
+    <MESSAGE value="added style and color" />
+    <option name="LAST_COMMIT_MESSAGE" value="added style and color" />
   </component>
 </project>

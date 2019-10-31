@@ -16,13 +16,30 @@ import Home from "./Home/HomePage";
 import { createMuiTheme } from '@material-ui/core/styles';
 import {ThemeProvider} from "@material-ui/styles";
 
-const theme = createMuiTheme({
+/*const theme = createMuiTheme({
     palette: {
         primary: {
             main: '#81c784',
         },
         secondary: {
             main: '#ffcc80',
+        },
+    },
+});*/
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            light: '#b2fab4',
+            main: '#81c784',
+            dark: '#519657',
+            contrastText: '#000',
+        },
+        secondary: {
+            light: '#ffddc1',
+            main: '#ffab91',
+            dark: '#c97b63',
+            contrastText: '#000',
         },
     },
 });
