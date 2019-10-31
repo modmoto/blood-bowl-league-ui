@@ -16,17 +16,6 @@ import Home from "./Home/HomePage";
 import { createMuiTheme } from '@material-ui/core/styles';
 import {ThemeProvider} from "@material-ui/styles";
 
-/*const theme = createMuiTheme({
-    palette: {
-        primary: {
-            main: '#81c784',
-        },
-        secondary: {
-            main: '#ffcc80',
-        },
-    },
-});*/
-
 const theme = createMuiTheme({
     palette: {
         primary: {
