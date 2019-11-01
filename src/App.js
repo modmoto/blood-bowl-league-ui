@@ -17,9 +17,9 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import {ThemeProvider} from "@material-ui/styles";
 import Container from "@material-ui/core/Container";
 
-import { createStore, applyMiddleware } from 'redux'
+import {createStore, applyMiddleware, combineReducers} from 'redux'
 import createSagaMiddleware from 'redux-saga'
-import fetchUpocomingGamesSaga from "./UpcominGames/UpcomingGamesSaga";
+import fetchUpcomingGamesSaga from "./UpcominGames/UpcomingGamesSaga";
 import upcomingGamesReducer from "./UpcominGames/UpcomingGamesReducer";
 
 import { Provider } from 'react-redux'
@@ -42,16 +42,15 @@ const theme = createMuiTheme({
 });
 
 const sagaMiddleware = createSagaMiddleware();
+var rootReducer = combineReducers({
+    upcomingGameState: upcomingGamesReducer,
+})
 const store = createStore(
-    upcomingGamesReducer,
+    rootReducer,
     applyMiddleware(sagaMiddleware)
 );
 
-sagaMiddleware.run(fetchUpocomingGamesSaga);
-
-function loadUpcomingGames() {
-    store.dispatch({type: 'UPCOMING_GAMES_REQUESTED', payload: "123"})
-}
+sagaMiddleware.run(fetchUpcomingGamesSaga);
 
 function App() {
     return (
@@ -62,7 +61,7 @@ function App() {
                         <Toolbar>
                             <Button component={Link} to={'/'} color="inherit">Kabbl</Button>
                             <Button component={Link} to={'/league'} color="inherit">League</Button>
-                            <Button component={Link} to={'/upcoming-games'} onClick={loadUpcomingGames} color="inherit">Upcoming Games</Button>
+                            <Button component={Link} to={'/upcoming-games'} color="inherit">Upcoming Games</Button>
                             <Button component={Link} to={'/my-team'} color="inherit">My Team</Button>
                         </Toolbar>
                     </AppBar>

@@ -15,8 +15,8 @@ function* fetchUser(action) {
     }
 }
 
-function* fetchUpocomingGamesSaga() {
+function* fetchUpcomingGamesSaga() {
     yield takeEvery("UPCOMING_GAMES_REQUESTED", fetchUser)
 }
 
-export default fetchUpocomingGamesSaga;
+export default fetchUpcomingGamesSaga;
