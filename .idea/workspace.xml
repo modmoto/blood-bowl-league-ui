@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13f0a0ce-9745-4f5b-ba30-6b4795564315" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/UpcominGames/UpcomingGamesReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UpcominGames/UpcomingGamesSaga.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +88,8 @@
       <option name="presentableId" value="Default" />
       <updated>1572539423494</updated>
       <workItem from="1572539425077" duration="383000" />
-      <workItem from="1572539848635" duration="6695000" />
+      <workItem from="1572539848635" duration="6787000" />
+      <workItem from="1572607396178" duration="2962000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1572541845823</created>
@@ -128,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572570390787</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="removed favicon not working">
+      <created>1572570555635</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1572570555635</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +166,7 @@
     <MESSAGE value="new theme" />
     <MESSAGE value="new theme 2" />
     <MESSAGE value="removed logo and description" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed logo and description" />
+    <MESSAGE value="removed favicon not working" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed favicon not working" />
   </component>
 </project>

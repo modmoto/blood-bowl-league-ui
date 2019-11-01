@@ -16,6 +16,11 @@ import Home from "./Home/HomePage";
 import { createMuiTheme } from '@material-ui/core/styles';
 import {ThemeProvider} from "@material-ui/styles";
 import Container from "@material-ui/core/Container";
+/*
+import { createStore, applyMiddleware } from 'redux'
+import createSagaMiddleware from 'redux-saga'
+import fetchUpocomingGamesSaga from "./UpcominGames/UpcomingGamesSaga";
+import upcomingGamesReducer from "./UpcominGames/UpcomingGamesReducer";*/
 
 const theme = createMuiTheme({
     palette: {
@@ -33,6 +38,14 @@ const theme = createMuiTheme({
         },
     },
 });
+/*
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(
+    upcomingGamesReducer,
+    applyMiddleware(sagaMiddleware)
+);
+
+sagaMiddleware.run(fetchUpocomingGamesSaga);*/
 
 function App() {
     return (
