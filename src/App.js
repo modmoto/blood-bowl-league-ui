@@ -15,6 +15,7 @@ import Home from "./Home/HomePage";
 
 import { createMuiTheme } from '@material-ui/core/styles';
 import {ThemeProvider} from "@material-ui/styles";
+import Container from "@material-ui/core/Container";
 
 const theme = createMuiTheme({
     palette: {
@@ -46,20 +47,23 @@ function App() {
                     </Toolbar>
                 </AppBar>
 
-                <Switch>
-                    <Route path="/league">
-                        <LeaguePage />
-                    </Route>
-                    <Route path="/upcoming-games">
-                        <UpcomingGamePage />
-                    </Route>
-                    <Route path="/my-team">
-                        <MyTeamPage />
-                    </Route>
-                    <Route path="/">
-                        <Home />
-                    </Route>
-                </Switch>
+                <Container maxWidth="sm" color={theme.palette.secondary.light}>
+
+                    <Switch>
+                        <Route path="/league">
+                            <LeaguePage />
+                        </Route>
+                        <Route path="/upcoming-games">
+                            <UpcomingGamePage />
+                        </Route>
+                        <Route path="/my-team">
+                            <MyTeamPage />
+                        </Route>
+                        <Route path="/">
+                            <Home />
+                        </Route>
+                    </Switch>
+                </Container>
             </ThemeProvider>
         </Router>
     )}
