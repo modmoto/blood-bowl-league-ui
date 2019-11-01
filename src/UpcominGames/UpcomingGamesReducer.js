@@ -1,11 +1,22 @@
-export default function upcomingGamesReducer(state = {}, action) {
+export default function upcomingGamesReducer(state = {
+    upcomingGames: []
+}, action) {
     switch (action.type) {
         case 'UPCOMING_GAMES_SUCEEDED':
-            return { upcomingGames: action.upcomingGames };
+            return {
+                ...state,
+                upcomingGames: action.upcomingGames,
+                loading: false
+            };
         case 'UPCOMING_GAMES_FAILED':
-            return { upcomingGames: null };
+            return {
+                ...state,
+                upcomingGames: null
+            };
         case 'UPCOMING_GAMES_REQUESTED':
-            return { loading: true };
+            return {
+            ...state,
+            loading: true };
         default:
             return state
     }

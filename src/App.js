@@ -16,11 +16,13 @@ import Home from "./Home/HomePage";
 import { createMuiTheme } from '@material-ui/core/styles';
 import {ThemeProvider} from "@material-ui/styles";
 import Container from "@material-ui/core/Container";
-/*
+
 import { createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import fetchUpocomingGamesSaga from "./UpcominGames/UpcomingGamesSaga";
-import upcomingGamesReducer from "./UpcominGames/UpcomingGamesReducer";*/
+import upcomingGamesReducer from "./UpcominGames/UpcomingGamesReducer";
+
+import { Provider } from 'react-redux'
 
 const theme = createMuiTheme({
     palette: {
@@ -38,45 +40,51 @@ const theme = createMuiTheme({
         },
     },
 });
-/*
+
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
     upcomingGamesReducer,
     applyMiddleware(sagaMiddleware)
 );
 
-sagaMiddleware.run(fetchUpocomingGamesSaga);*/
+sagaMiddleware.run(fetchUpocomingGamesSaga);
+
+function loadUpcomingGames() {
+    store.dispatch({type: 'UPCOMING_GAMES_REQUESTED', payload: "123"})
+}
 
 function App() {
     return (
         <Router>
             <ThemeProvider theme={theme}>
-                <AppBar position="static">
-                    <Toolbar>
-                        <Button  component={Link} to={'/'} color="inherit">Kabbl</Button>
-                        <Button  component={Link} to={'/league'} color="inherit">League</Button>
-                        <Button  component={Link} to={'/upcoming-games'} color="inherit">Upcoming Games</Button>
-                        <Button  component={Link} to={'/my-team'} color="inherit">My Team</Button>
-                    </Toolbar>
-                </AppBar>
+                <Provider store={store}>
+                    <AppBar position="static">
+                        <Toolbar>
+                            <Button component={Link} to={'/'} color="inherit">Kabbl</Button>
+                            <Button component={Link} to={'/league'} color="inherit">League</Button>
+                            <Button component={Link} to={'/upcoming-games'} onClick={loadUpcomingGames} color="inherit">Upcoming Games</Button>
+                            <Button component={Link} to={'/my-team'} color="inherit">My Team</Button>
+                        </Toolbar>
+                    </AppBar>
 
-                <Container maxWidth="sm" color={theme.palette.secondary.light}>
+                    <Container maxWidth="sm" color={theme.palette.secondary.light}>
 
-                    <Switch>
-                        <Route path="/league">
-                            <LeaguePage />
-                        </Route>
-                        <Route path="/upcoming-games">
-                            <UpcomingGamePage />
-                        </Route>
-                        <Route path="/my-team">
-                            <MyTeamPage />
-                        </Route>
-                        <Route path="/">
-                            <Home />
-                        </Route>
-                    </Switch>
-                </Container>
+                        <Switch>
+                            <Route path="/league">
+                                <LeaguePage />
+                            </Route>
+                            <Route path="/upcoming-games">
+                                <UpcomingGamePage />
+                            </Route>
+                            <Route path="/my-team">
+                                <MyTeamPage />
+                            </Route>
+                            <Route path="/">
+                                <Home />
+                            </Route>
+                        </Switch>
+                    </Container>
+                </Provider>
             </ThemeProvider>
         </Router>
     )}

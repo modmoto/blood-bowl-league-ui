@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13f0a0ce-9745-4f5b-ba30-6b4795564315" name="Default Changelist" comment="" />
+    <list default="true" id="13f0a0ce-9745-4f5b-ba30-6b4795564315" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UpcominGames/UpcomingGamesPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UpcominGames/UpcomingGamesPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UpcominGames/UpcomingGamesReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UpcominGames/UpcomingGamesReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UpcominGames/UpcomingGamesSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UpcominGames/UpcomingGamesSaga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +30,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js.last.introduce.type" value="LET" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/UpcominGames" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -139,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572613093157</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="delete icon">
+      <created>1572613215280</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1572613215280</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +183,7 @@
     <MESSAGE value="removed logo and description" />
     <MESSAGE value="removed favicon not working" />
     <MESSAGE value="jeah" />
-    <option name="LAST_COMMIT_MESSAGE" value="jeah" />
+    <MESSAGE value="delete icon" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete icon" />
   </component>
 </project>
