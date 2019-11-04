@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import {connect} from "react-redux";
+import GameDayListPanel from "./GameDayListPanel";
 
 function UpcomingGamePage(props) {
     useEffect(() => {
@@ -7,18 +8,9 @@ function UpcomingGamePage(props) {
     });
 
     var upcomingGames = props.upcomingGames;
-    var mappedDays = upcomingGames.map(gameDay =>
-        <li>
-            <div>{gameDay.id}:</div>
-            <ul>
-                {gameDay.matchups.map(match => <li>{match.homeTeamName} vs {match.guestTeamName}</li>)}
-            </ul>
-        </li>
-    );
+
     return (
-        <ul>
-            {mappedDays}
-        </ul>
+        <GameDayListPanel gameDays = {upcomingGames}/>
     );
 }
 

@@ -61,7 +61,7 @@ function App() {
                         <Toolbar>
                             <Button component={Link} to={'/'} color="inherit">Kabbl</Button>
                             <Button component={Link} to={'/league'} color="inherit">League</Button>
-                            <Button component={Link} to={'/upcoming-games'} color="inherit">Upcoming Games</Button>
+                            <Button component={Link} to={'/upcoming-games'} color="inherit">Gamedays</Button>
                             <Button component={Link} to={'/my-team'} color="inherit">My Team</Button>
                         </Toolbar>
                     </AppBar>
