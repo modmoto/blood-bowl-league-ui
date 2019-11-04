@@ -3,14 +3,21 @@ import {connect} from "react-redux";
 
 function UpcomingGamePage(props) {
     useEffect(() => {
-        props.dispatch({type: 'UPCOMING_GAMES_REQUESTED'})
-    }, []);
+        props.dispatch({type: 'UPCOMING_GAMES_REQUESTED', payload: { seasonId: '7a097eae-be35-4b4d-a23d-98a6b57534f3' }})
+    });
 
     var upcomingGames = props.upcomingGames;
-    var mappedTeams = upcomingGames.map(game => <l1>{game.homeTeam.Name} vs {game.guestTeam.Name}</l1>);
+    var mappedDays = upcomingGames.map(gameDay =>
+        <li>
+            <div>{gameDay.id}:</div>
+            <ul>
+                {gameDay.matchups.map(match => <li>{match.homeTeamName} vs {match.guestTeamName}</li>)}
+            </ul>
+        </li>
+    );
     return (
         <ul>
-            {mappedTeams}
+            {mappedDays}
         </ul>
     );
 }

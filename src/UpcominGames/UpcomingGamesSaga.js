@@ -1,14 +1,9 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
+import {fetchUpcomingGames} from "../Backend/SeasonRepository";
 
 function* fetchUser(action) {
     try {
-        /*const user = yield call(Api.fetchUser, action.payload.userId);*/
-        const upcomingGames = [{
-            homeTeam: {
-                Name: "Simon"},
-            guestTeam: {
-                Name: "Peter"
-            }}];
+        const upcomingGames = yield call(fetchUpcomingGames, action.payload.seasonId);
         yield put({type: "UPCOMING_GAMES_SUCEEDED", upcomingGames: upcomingGames});
     } catch (e) {
         yield put({type: "UPCOMING_GAMES_FAILED", message: e.message});
