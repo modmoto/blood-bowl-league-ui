@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13f0a0ce-9745-4f5b-ba30-6b4795564315" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/UpcominGames/GameDayListPanel.js" afterDir="false" />
+    <list default="true" id="13f0a0ce-9745-4f5b-ba30-6b4795564315" name="Default Changelist" comment="added ok list of coming gamedays">
+      <change afterPath="$PROJECT_DIR$/src/UpcominGames/GameDayItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UpcominGames/UpcomingGamesPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UpcominGames/UpcomingGamesPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/League/LeaguePage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UpcominGames/GameDayListPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UpcominGames/GameDayListPanel.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +90,7 @@
       <workItem from="1572539848635" duration="6787000" />
       <workItem from="1572607396178" duration="2962000" />
       <workItem from="1572628252307" duration="4479000" />
-      <workItem from="1572893739400" duration="3616000" />
+      <workItem from="1572893739400" duration="5672000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1572541845823</created>
@@ -175,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572900660614</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added own component for list panel">
+      <created>1572901110314</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1572901110314</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,6 +215,7 @@
     <MESSAGE value="react store working now" />
     <MESSAGE value="loading from store and combined reducers working" />
     <MESSAGE value="first real backendcall for games working" />
-    <option name="LAST_COMMIT_MESSAGE" value="first real backendcall for games working" />
+    <MESSAGE value="added own component for list panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="added own component for list panel" />
   </component>
 </project>

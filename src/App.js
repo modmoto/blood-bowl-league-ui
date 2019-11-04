@@ -8,7 +8,6 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import LeaguePage from "./League/LeaguePage";
 import MyTeamPage from "./MyTeam/MyTeamPage";
 import UpcomingGamePage from "./UpcominGames/UpcomingGamesPage";
 import Home from "./Home/HomePage";
@@ -60,7 +59,6 @@ function App() {
                     <AppBar position="static">
                         <Toolbar>
                             <Button component={Link} to={'/'} color="inherit">Kabbl</Button>
-                            <Button component={Link} to={'/league'} color="inherit">League</Button>
                             <Button component={Link} to={'/upcoming-games'} color="inherit">Gamedays</Button>
                             <Button component={Link} to={'/my-team'} color="inherit">My Team</Button>
                         </Toolbar>
@@ -69,9 +67,6 @@ function App() {
                     <Container maxWidth="sm" color={theme.palette.secondary.light}>
 
                         <Switch>
-                            <Route path="/league">
-                                <LeaguePage />
-                            </Route>
                             <Route path="/upcoming-games">
                                 <UpcomingGamePage />
                             </Route>
