@@ -1,20 +1,20 @@
-export default function upcomingGamesReducer(state = {
-    upcomingGames: []
+export default function myTeamPageReducer(state = {
+    myTeam: null
 }, action) {
     switch (action.type) {
-        case 'UPCOMING_GAMES_SUCEEDED':
+        case 'FETCH_MY_TEAM_SUCEEDED':
             return {
                 ...state,
-                upcomingGames: action.upcomingGames,
+                myTeam: action.myTeam,
                 loading: false
             };
-        case 'UPCOMING_GAMES_FAILED':
+        case 'FETCH_MY_TEAM_FAILED':
             return {
                 ...state,
-                upcomingGames: [],
+                myTeam: null,
                 loading: false
             };
-        case 'UPCOMING_GAMES_REQUESTED':
+        case 'FETCH_MY_TEAM_REQUESTED':
             return {
             ...state,
             loading: true };

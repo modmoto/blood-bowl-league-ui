@@ -15,13 +15,13 @@ import Home from "./Home/HomePage";
 import { createMuiTheme } from '@material-ui/core/styles';
 import {ThemeProvider} from "@material-ui/styles";
 import Container from "@material-ui/core/Container";
-
+import { Provider } from 'react-redux'
 import {createStore, applyMiddleware, combineReducers} from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import fetchUpcomingGamesSaga from "./UpcominGames/UpcomingGamesSaga";
 import upcomingGamesReducer from "./UpcominGames/UpcomingGamesReducer";
-
-import { Provider } from 'react-redux'
+import myTeamPageReducer from "./MyTeam/MyTeamPageReducer";
+import fetchMyTeamSaga from "./MyTeam/MyTeamPageSaga";
 
 const theme = createMuiTheme({
     palette: {
@@ -43,6 +43,7 @@ const theme = createMuiTheme({
 const sagaMiddleware = createSagaMiddleware();
 var rootReducer = combineReducers({
     upcomingGameState: upcomingGamesReducer,
+    myTeamState: myTeamPageReducer,
 })
 const store = createStore(
     rootReducer,
@@ -50,6 +51,7 @@ const store = createStore(
 );
 
 sagaMiddleware.run(fetchUpcomingGamesSaga);
+sagaMiddleware.run(fetchMyTeamSaga);
 
 function App() {
     return (

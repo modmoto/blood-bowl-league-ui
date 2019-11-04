@@ -1,7 +1,7 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
 import {fetchUpcomingGames} from "../Backend/SeasonRepository";
 
-function* fetchUser(action) {
+function* fetchUpcomingGamesDays(action) {
     try {
         const upcomingGames = yield call(fetchUpcomingGames, action.payload.seasonId);
         yield put({type: "UPCOMING_GAMES_SUCEEDED", upcomingGames: upcomingGames});
@@ -11,7 +11,7 @@ function* fetchUser(action) {
 }
 
 function* fetchUpcomingGamesSaga() {
-    yield takeEvery("UPCOMING_GAMES_REQUESTED", fetchUser)
+    yield takeEvery("UPCOMING_GAMES_REQUESTED", fetchUpcomingGamesDays)
 }
 
 export default fetchUpcomingGamesSaga;
