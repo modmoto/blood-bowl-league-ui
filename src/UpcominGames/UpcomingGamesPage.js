@@ -17,8 +17,8 @@ function UpcomingGamePage(props) {
 function mapStateToProps(state) {
     const { upcomingGames, isLoading } = state.upcomingGameState
     return {
-        upcomingGames: upcomingGames,
-        isLoading : isLoading
+        upcomingGames,
+        isLoading
     }
 }
 
