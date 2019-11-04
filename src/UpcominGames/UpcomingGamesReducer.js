@@ -11,7 +11,7 @@ export default function upcomingGamesReducer(state = {
         case 'UPCOMING_GAMES_FAILED':
             return {
                 ...state,
-                upcomingGames: null
+                upcomingGames: []
             };
         case 'UPCOMING_GAMES_REQUESTED':
             return {
