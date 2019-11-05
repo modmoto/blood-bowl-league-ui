@@ -16,22 +16,25 @@ function GameDayListPanel(props) {
 
 
     var mappedTabs = upcomingGames.map((gameDay, index) =>
-        <Tab label = {'Gameday ' + (index + 1)} />
+        <Tab label={'Gameday ' + (index + 1)} key={index} />
     );
 
     var mappedItems = upcomingGames.map((gameDay, index) =>
-        <GameDayItem gameDay={gameDay} index={index} value={value}/>
+        <GameDayItem gameDay={gameDay} index={index} value={value} key={index}/>
     );
 
     return (
-        <Box mt={3}>
-            <AppBar position="static" color='grey'>
-                <Tabs mt={3} value={value} onChange={handleChange}>
-                    {mappedTabs}
-                </Tabs>
-            </AppBar>
-            {mappedItems}
-        </Box>
+        <>
+            <Box mt={3}>
+                <AppBar position="static" color='grey'>
+                    <Tabs mt={3} value={value} onChange={handleChange}>
+                        {mappedTabs}
+                    </Tabs>
+                </AppBar>
+                {mappedItems}
+            </Box>
+        </>
+
     );
 }
 

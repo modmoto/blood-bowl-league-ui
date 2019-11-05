@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13f0a0ce-9745-4f5b-ba30-6b4795564315" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/i18nResources/de.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/i18nResources/en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/i18nResources/languages" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyTeam/MyTeamPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyTeam/MyTeamPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UpcominGames/GameDayItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UpcominGames/GameDayItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UpcominGames/GameDayListPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UpcominGames/GameDayListPanel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UpcominGames/UpcomingGamesPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UpcominGames/UpcomingGamesPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serviceWorker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +37,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="LET" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/i18n" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -42,6 +52,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/i18n" />
       <recent name="$PROJECT_DIR$/src/Backend" />
       <recent name="$PROJECT_DIR$/src/MyTeam" />
       <recent name="$PROJECT_DIR$/src/UpcominGames" />
@@ -89,7 +100,7 @@
       <workItem from="1572539848635" duration="6787000" />
       <workItem from="1572607396178" duration="2962000" />
       <workItem from="1572628252307" duration="4479000" />
-      <workItem from="1572893739400" duration="8171000" />
+      <workItem from="1572893739400" duration="15090000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1572541845823</created>
@@ -210,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572905142490</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="added list of players, have to do more backend stuff now">
+      <created>1572905667310</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1572905667310</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,6 +265,7 @@
     <MESSAGE value="small fix" />
     <MESSAGE value="addedworkspace xml to gitignore" />
     <MESSAGE value="sage fuer get team working" />
-    <option name="LAST_COMMIT_MESSAGE" value="sage fuer get team working" />
+    <MESSAGE value="added list of players, have to do more backend stuff now" />
+    <option name="LAST_COMMIT_MESSAGE" value="added list of players, have to do more backend stuff now" />
   </component>
 </project>
