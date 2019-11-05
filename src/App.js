@@ -22,7 +22,6 @@ import fetchUpcomingGamesSaga from "./UpcominGames/UpcomingGamesSaga";
 import upcomingGamesReducer from "./UpcominGames/UpcomingGamesReducer";
 import myTeamPageReducer from "./MyTeam/MyTeamPageReducer";
 import fetchMyTeamSaga from "./MyTeam/MyTeamPageSaga";
-import {useTranslation} from "react-i18next";
 
 const theme = createMuiTheme({
     palette: {
