@@ -1,8 +1,8 @@
 const en = {
     translation: {
-        "Humans": "Humansasds",
+        "Humans": "Humans",
         "HU_Blitzer": "Blitzer",
-        "HU_LineMan": "Lineman",
+        "HU_LineMan": "Lineman"
     }
 }
 

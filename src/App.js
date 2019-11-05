@@ -22,6 +22,7 @@ import fetchUpcomingGamesSaga from "./UpcominGames/UpcomingGamesSaga";
 import upcomingGamesReducer from "./UpcominGames/UpcomingGamesReducer";
 import myTeamPageReducer from "./MyTeam/MyTeamPageReducer";
 import fetchMyTeamSaga from "./MyTeam/MyTeamPageSaga";
+import {useTranslation} from "react-i18next";
 
 const theme = createMuiTheme({
     palette: {
@@ -66,9 +67,7 @@ function App() {
                                 <Button component={Link} to={'/my-team'} color="inherit">My Team</Button>
                             </Toolbar>
                         </AppBar>
-
                         <Container maxWidth="sm" color={theme.palette.secondary.light}>
-
                             <Switch>
                                 <Route path="/upcoming-games">
                                     <UpcomingGamePage />

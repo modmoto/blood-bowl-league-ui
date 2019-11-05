@@ -2,7 +2,7 @@ const de = {
     translation: {
         "Humans": "Menschen",
         "HU_Blitzer": "Blitzer",
-        "HU_LineMan": "Feldspieler",
+        "HU_LineMan": "Feldspieler"
     }
 }
 

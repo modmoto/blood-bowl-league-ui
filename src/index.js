@@ -5,12 +5,12 @@ import App from './App';
 
 import i18n from "i18next";
 import {initReactI18next} from "react-i18next";
-import languages from "./i18nResources/languages";
+import languages from "./i18nResources/languages.js";
 
 i18n
     .use(initReactI18next)
     .init({
-        languages,
+        resources: languages,
         lng: "en",
         fallbackLng: "en",
         keySeparator: false,

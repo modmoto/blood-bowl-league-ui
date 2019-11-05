@@ -8,6 +8,7 @@ import TableBody from "@material-ui/core/TableBody";
 
 import {Box, Typography} from "@material-ui/core";
 import {LoadingIndicator} from "../UtilComponents/LoadingIndicator";
+import {Translation} from "react-i18next";
 
 class MyTeamPage extends Component {
     componentDidMount() {
@@ -20,27 +21,34 @@ class MyTeamPage extends Component {
 
         return (
             <Box mt={3}>
-                <Typography variant='h5' pt={3}>{myTeam.teamName} ({myTeam.raceId})</Typography>
-                <Table>
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>Nr</TableCell>
-                            <TableCell>Name</TableCell>
-                            <TableCell>Type</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {myTeam.playerList.map((player, index) => (
-                            <TableRow key={index}>
-                                <TableCell component="th" scope="row">
-                                    {index + 1}
-                                </TableCell>
-                                <TableCell>{player.playerName}</TableCell>
-                                <TableCell>{player.playerTypeId}</TableCell>
+                <Translation>
+                    {
+                        (t) =>
+                    <>
+                    <Typography variant='h5' pt={3}>{myTeam.teamName} ({t(myTeam.raceId)})</Typography>
+                    <Table>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>Nr</TableCell>
+                                <TableCell>Name</TableCell>
+                                <TableCell>Type</TableCell>
                             </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
+                        </TableHead>
+                        <TableBody>
+                            {myTeam.playerList.map((player, index) => (
+                                <TableRow key={index}>
+                                    <TableCell component="th" scope="row">
+                                        {index + 1}
+                                    </TableCell>
+                                    <TableCell>{player.playerName}</TableCell>
+                                    <TableCell>{t(player.playerTypeId)}</TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                    </>
+                    }
+                </Translation>
             </Box>
         )
     }
