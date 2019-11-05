@@ -27,7 +27,7 @@ function GameDayListPanel(props) {
         <>
             <Box mt={3}>
                 <AppBar position="static" color={"inherit"}>
-                    <Tabs mt={3} value={value} onChange={handleChange}>
+                    <Tabs mt={3} value={value} onChange={handleChange} variant="fullWidth">
                         {mappedTabs}
                     </Tabs>
                 </AppBar>
