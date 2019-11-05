@@ -6,7 +6,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
 import TableBody from "@material-ui/core/TableBody";
 
-import {Typography} from "@material-ui/core";
+import {Box, Typography} from "@material-ui/core";
 
 class MyTeamPage extends Component {
     componentDidMount() {
@@ -18,7 +18,7 @@ class MyTeamPage extends Component {
         if (!myTeam) return <></>
 
         return (
-            <>
+            <Box mt={3}>
                 <Typography variant='h5' pt={3}>{myTeam.teamName} ({myTeam.raceId})</Typography>
                 <Table>
                     <TableHead>
@@ -40,7 +40,7 @@ class MyTeamPage extends Component {
                         ))}
                     </TableBody>
                 </Table>
-            </>
+            </Box>
         )
     }
 }
