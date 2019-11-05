@@ -1,5 +1,6 @@
 export default function myTeamPageReducer(state = {
-    myTeam: null
+    myTeam: null,
+    loading: true
 }, action) {
     switch (action.type) {
         case 'FETCH_MY_TEAM_SUCEEDED':
@@ -16,8 +17,9 @@ export default function myTeamPageReducer(state = {
             };
         case 'FETCH_MY_TEAM_REQUESTED':
             return {
-            ...state,
-            loading: true };
+                ...state,
+                loading: true
+            };
         default:
             return state
     }

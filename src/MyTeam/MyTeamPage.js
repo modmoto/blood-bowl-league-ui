@@ -7,6 +7,7 @@ import TableRow from "@material-ui/core/TableRow";
 import TableBody from "@material-ui/core/TableBody";
 
 import {Box, Typography} from "@material-ui/core";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 class MyTeamPage extends Component {
     componentDidMount() {
@@ -14,8 +15,8 @@ class MyTeamPage extends Component {
     }
 
     render() {
-        const { myTeam } = this.props
-        if (!myTeam) return <></>
+        const { myTeam, loading } = this.props
+        if (loading) return <CircularProgress color="secondary" />
 
         return (
             <Box mt={3}>
@@ -24,7 +25,7 @@ class MyTeamPage extends Component {
                     <TableHead>
                         <TableRow>
                             <TableCell>Nr</TableCell>
-                            <TableCell>Id</TableCell>
+                            <TableCell>Name</TableCell>
                             <TableCell>Type</TableCell>
                         </TableRow>
                     </TableHead>
@@ -34,7 +35,7 @@ class MyTeamPage extends Component {
                                 <TableCell component="th" scope="row">
                                     {index + 1}
                                 </TableCell>
-                                <TableCell>{player.playerId}</TableCell>
+                                <TableCell>{player.playerName}</TableCell>
                                 <TableCell>{player.playerTypeId}</TableCell>
                             </TableRow>
                         ))}
@@ -46,10 +47,10 @@ class MyTeamPage extends Component {
 }
 
 function mapStateToProps(state) {
-    const { myTeam, isLoading } = state.myTeamState
+    const { myTeam, loading } = state.myTeamState
     return {
         myTeam,
-        isLoading
+        loading
     }
 }
 

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import GameDayListPanel from "./GameDayListPanel";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 class UpcomingGamePage extends Component{
     componentDidMount() {
@@ -8,7 +9,8 @@ class UpcomingGamePage extends Component{
     }
 
     render() {
-        var upcomingGames = this.props.upcomingGames;
+        var { upcomingGames, loading } = this.props;
+        if (loading) return <CircularProgress color="secondary" />
 
         return (
             <GameDayListPanel gameDays = {upcomingGames}/>
@@ -17,10 +19,10 @@ class UpcomingGamePage extends Component{
 }
 
 function mapStateToProps(state) {
-    const { upcomingGames, isLoading } = state.upcomingGameState
+    const { upcomingGames, loading} = state.upcomingGameState
     return {
         upcomingGames,
-        isLoading
+        loading
     }
 }
 

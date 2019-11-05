@@ -1,5 +1,6 @@
 export default function upcomingGamesReducer(state = {
-    upcomingGames: []
+    upcomingGames: [],
+    loading: true
 }, action) {
     switch (action.type) {
         case 'UPCOMING_GAMES_SUCEEDED':
@@ -16,8 +17,9 @@ export default function upcomingGamesReducer(state = {
             };
         case 'UPCOMING_GAMES_REQUESTED':
             return {
-            ...state,
-            loading: true };
+                ...state,
+                loading: true
+            };
         default:
             return state
     }

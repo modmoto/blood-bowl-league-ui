@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="13f0a0ce-9745-4f5b-ba30-6b4795564315" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UpcominGames/GameDayListPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UpcominGames/GameDayListPanel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyTeam/MyTeamPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyTeam/MyTeamPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyTeam/MyTeamPageReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyTeam/MyTeamPageReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UpcominGames/UpcomingGamesPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UpcominGames/UpcomingGamesPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UpcominGames/UpcomingGamesReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UpcominGames/UpcomingGamesReducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
