@@ -7,7 +7,7 @@ import TableRow from "@material-ui/core/TableRow";
 import TableBody from "@material-ui/core/TableBody";
 
 import {Box, Typography} from "@material-ui/core";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import {LoadingIndicator} from "../UtilComponents/LoadingIndicator";
 
 class MyTeamPage extends Component {
     componentDidMount() {
@@ -16,7 +16,7 @@ class MyTeamPage extends Component {
 
     render() {
         const { myTeam, loading } = this.props
-        if (loading) return <CircularProgress color="secondary" />
+        if (loading) return <LoadingIndicator />
 
         return (
             <Box mt={3}>

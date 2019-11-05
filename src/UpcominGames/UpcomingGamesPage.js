@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import GameDayListPanel from "./GameDayListPanel";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import {LoadingIndicator} from "../UtilComponents/LoadingIndicator";
 
 class UpcomingGamePage extends Component{
     componentDidMount() {
@@ -10,7 +10,7 @@ class UpcomingGamePage extends Component{
 
     render() {
         var { upcomingGames, loading } = this.props;
-        if (loading) return <CircularProgress color="secondary" />
+        if (loading) return <LoadingIndicator />
 
         return (
             <GameDayListPanel gameDays = {upcomingGames}/>
