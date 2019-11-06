@@ -6,7 +6,7 @@ import { Switch, Route, Link } from "react-router-dom";
 import MyTeamPage from "./MyTeam/MyTeamPage";
 import UpcomingGamePage from "./UpcominGames/UpcomingGamesPage";
 import Home from "./Home/HomePage";
-import {withTranslation} from 'react-i18next';
+import {useTranslation, withTranslation} from 'react-i18next';
 
 import Container from "@material-ui/core/Container";
 import {useDispatch} from 'react-redux'
@@ -14,6 +14,8 @@ import i18n from "i18next";
 
 function AppContent() {
     const dispatch = useDispatch()
+    const { t } = useTranslation()
+
 
     useEffect(() => {
         dispatch({type: 'FETCH_MY_TEAM_REQUESTED', payload: { teamId: '406d35ee-421a-4d45-9f34-1834d5acd215' }})
@@ -31,9 +33,9 @@ function AppContent() {
         <>
             <AppBar position="static">
                 <Toolbar>
-                    <Button component={Link} to={'/'} color="inherit">Kabbl</Button>
-                    <Button component={Link} to={'/upcoming-games'} color="inherit">Gamedays</Button>
-                    <Button component={Link} to={'/my-team'} color="inherit">My Team</Button>
+                    <Button size={'large'} component={Link} to={'/'} color="inherit">KABBL</Button>
+                    <Button size={'large'} component={Link} to={'/upcoming-games'} color="inherit">{t("appContent.GameDays")}</Button>
+                    <Button size={'large'} component={Link} to={'/my-team'} color="inherit">{t("appContent.MyTeam")}</Button>
                     <div style={{ marginLeft: 'auto' }}>
                         <Button onClick={() => changeLanguage('de')}>DE</Button>
                         <Button onClick={() => changeLanguage('en')}>EN</Button>

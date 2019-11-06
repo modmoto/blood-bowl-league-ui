@@ -1,5 +1,10 @@
 const de = {
     translation: {
+        appContent: {
+            "MyTeam": "Mein Team",
+            "GameDays": "Spieltage",
+        },
+
         homePage: {
             "Title": "Karlsruher Blood Bowl Liga",
             "SubTitle": "in und um Karlsruhe seit 2008"

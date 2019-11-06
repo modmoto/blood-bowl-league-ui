@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13f0a0ce-9745-4f5b-ba30-6b4795564315" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/helpers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18nResources/de.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18nResources/de.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18nResources/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18nResources/en.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -367,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573071119209</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="moved to own file">
+      <created>1573071832694</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1573071832694</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,7 +393,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="jeah" />
     <MESSAGE value="delete icon" />
     <MESSAGE value="react store working now" />
     <MESSAGE value="loading from store and combined reducers working" />
@@ -412,6 +417,7 @@
     <MESSAGE value="loading indicator now centered" />
     <MESSAGE value="added language changing compatability" />
     <MESSAGE value="everything translated now" />
-    <option name="LAST_COMMIT_MESSAGE" value="everything translated now" />
+    <MESSAGE value="moved to own file" />
+    <option name="LAST_COMMIT_MESSAGE" value="moved to own file" />
   </component>
 </project>
