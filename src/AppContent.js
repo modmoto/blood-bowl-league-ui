@@ -33,9 +33,9 @@ function AppContent() {
         <>
             <AppBar position="static">
                 <Toolbar>
-                    <Button size={'large'} component={Link} to={'/'} color="inherit">KABBL</Button>
-                    <Button size={'large'} component={Link} to={'/upcoming-games'} color="inherit">{t("appContent.GameDays")}</Button>
-                    <Button size={'large'} component={Link} to={'/my-team'} color="inherit">{t("appContent.MyTeam")}</Button>
+                    <ToolbarButton to={'/'}>KABBL</ToolbarButton>
+                    <ToolbarButton to={'/upcoming-games'}>{t("appContent.GameDays")}</ToolbarButton>
+                    <ToolbarButton to={'/my-team'}>{t("appContent.MyTeam")}</ToolbarButton>
                     <div style={{ marginLeft: 'auto' }}>
                         <Button onClick={() => changeLanguage('de')}>DE</Button>
                         <Button onClick={() => changeLanguage('en')}>EN</Button>
@@ -59,6 +59,11 @@ function AppContent() {
             </Container>
         </>
     )
+}
+
+function ToolbarButton(props) {
+    return <Button size={'large'} component={Link} to={props.to}>{props.children}</Button>
+
 }
 
 export default withTranslation()(AppContent);

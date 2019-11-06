@@ -4,8 +4,6 @@
     <list default="true" id="13f0a0ce-9745-4f5b-ba30-6b4795564315" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/i18nResources/de.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18nResources/de.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/i18nResources/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18nResources/en.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -373,7 +371,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573071832694</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="some more translations on buttons">
+      <created>1573072430073</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1573072430073</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,7 +398,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="delete icon" />
     <MESSAGE value="react store working now" />
     <MESSAGE value="loading from store and combined reducers working" />
     <MESSAGE value="first real backendcall for games working" />
@@ -418,6 +422,7 @@
     <MESSAGE value="added language changing compatability" />
     <MESSAGE value="everything translated now" />
     <MESSAGE value="moved to own file" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved to own file" />
+    <MESSAGE value="some more translations on buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="some more translations on buttons" />
   </component>
 </project>
