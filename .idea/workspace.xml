@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="13f0a0ce-9745-4f5b-ba30-6b4795564315" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UtilComponents/LoadingIndicator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UtilComponents/LoadingIndicator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +41,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -299,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573065928653</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="loading indicator now centered">
+      <created>1573066934604</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1573066934604</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,7 +329,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="new theme 2" />
     <MESSAGE value="removed logo and description" />
     <MESSAGE value="removed favicon not working" />
     <MESSAGE value="jeah" />
@@ -344,6 +353,7 @@
     <MESSAGE value="delete azure pipeline stuff" />
     <MESSAGE value="added peer dependencies to remove build warnings" />
     <MESSAGE value="root is now cooler" />
-    <option name="LAST_COMMIT_MESSAGE" value="root is now cooler" />
+    <MESSAGE value="loading indicator now centered" />
+    <option name="LAST_COMMIT_MESSAGE" value="loading indicator now centered" />
   </component>
 </project>
