@@ -4,8 +4,10 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import {GameDayItem} from "./GameDayItem";
 import {Box} from "@material-ui/core";
+import {useTranslation} from "react-i18next";
 
 function GameDayListPanel(props) {
+    const { t } = useTranslation();
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {
@@ -16,7 +18,7 @@ function GameDayListPanel(props) {
 
 
     var mappedTabs = upcomingGames.map((gameDay, index) =>
-        <Tab label={'Gameday ' + (index + 1)} key={index} />
+        <Tab label={t("gameDayPage.GameDay") + " " + (index + 1)} key={index} />
     );
 
     var mappedItems = upcomingGames.map((gameDay, index) =>

@@ -18,13 +18,13 @@ function MyTeamPage(props) {
 
     return (
         <Box mt={3}>
-        <Typography variant='h5' pt={3}>{myTeam.teamName} ({t(myTeam.raceId)})</Typography>
+        <Typography variant='h5' pt={3}>{myTeam.teamName} ({t("races." + myTeam.raceId)})</Typography>
         <Table>
             <TableHead>
                 <TableRow>
-                    <TableCell>Nr</TableCell>
-                    <TableCell>Name</TableCell>
-                    <TableCell>Type</TableCell>
+                    <TableCell>{t("teamPage.No")}</TableCell>
+                    <TableCell>{t("teamPage.Name")}</TableCell>
+                    <TableCell>{t("teamPage.Type")}</TableCell>
                 </TableRow>
             </TableHead>
             <TableBody>
@@ -34,7 +34,7 @@ function MyTeamPage(props) {
                             {index + 1}
                         </TableCell>
                         <TableCell>{player.name}</TableCell>
-                        <TableCell>{t(player.playerTypeId)}</TableCell>
+                        <TableCell>{t("playerTypes." + player.playerTypeId)}</TableCell>
                     </TableRow>
                 ))}
             </TableBody>
