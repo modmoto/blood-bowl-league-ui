@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13f0a0ce-9745-4f5b-ba30-6b4795564315" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-    </list>
+    <list default="true" id="13f0a0ce-9745-4f5b-ba30-6b4795564315" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,7 +267,21 @@
       <option name="project" value="LOCAL" />
       <updated>1572991094293</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="try run npm only">
+      <created>1573064478520</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1573064478520</updated>
+    </task>
+    <task id="LOCAL-00027" summary="delete azure pipeline stuff">
+      <created>1573064518590</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1573064518590</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,8 +301,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="first commit" />
-    <MESSAGE value="added router and first pages" />
     <MESSAGE value="added style and color" />
     <MESSAGE value="new theme" />
     <MESSAGE value="new theme 2" />
@@ -315,6 +324,8 @@
     <MESSAGE value="added working translations" />
     <MESSAGE value="use react hooks again" />
     <MESSAGE value="get full team now for site" />
-    <option name="LAST_COMMIT_MESSAGE" value="get full team now for site" />
+    <MESSAGE value="try run npm only" />
+    <MESSAGE value="delete azure pipeline stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete azure pipeline stuff" />
   </component>
 </project>
