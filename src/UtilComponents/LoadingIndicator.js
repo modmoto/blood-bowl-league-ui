@@ -1,11 +1,18 @@
-import Box from "@material-ui/core/Box";
 import React from "react";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import Grid from "@material-ui/core/Grid";
 
 export function LoadingIndicator() {
     return (
-        <Box style={{position: 'relative'}} pt={10}>
-            <CircularProgress style={{marginLeft: '50%'}} color="secondary" />
-        </Box>
+        <Grid
+            container
+            spacing={0}
+            direction="column"
+            alignItems="center"
+            justify="center"
+            style={{ minHeight: '30vh' }}
+        >
+            <CircularProgress color="secondary" />
+        </Grid>
     )
 }

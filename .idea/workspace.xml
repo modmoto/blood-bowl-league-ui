@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13f0a0ce-9745-4f5b-ba30-6b4795564315" name="Default Changelist" comment="added peer dependencies to remove build warnings">
-      <change afterPath="$PROJECT_DIR$/src/AppContent.js" afterDir="false" />
+    <list default="true" id="13f0a0ce-9745-4f5b-ba30-6b4795564315" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyTeam/MyTeamPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyTeam/MyTeamPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UpcominGames/UpcomingGamesPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UpcominGames/UpcomingGamesPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UtilComponents/LoadingIndicator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UtilComponents/LoadingIndicator.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -294,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573065341407</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="root is now cooler">
+      <created>1573065928653</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1573065928653</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,7 +319,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="new theme" />
     <MESSAGE value="new theme 2" />
     <MESSAGE value="removed logo and description" />
     <MESSAGE value="removed favicon not working" />
@@ -339,6 +343,7 @@
     <MESSAGE value="try run npm only" />
     <MESSAGE value="delete azure pipeline stuff" />
     <MESSAGE value="added peer dependencies to remove build warnings" />
-    <option name="LAST_COMMIT_MESSAGE" value="added peer dependencies to remove build warnings" />
+    <MESSAGE value="root is now cooler" />
+    <option name="LAST_COMMIT_MESSAGE" value="root is now cooler" />
   </component>
 </project>

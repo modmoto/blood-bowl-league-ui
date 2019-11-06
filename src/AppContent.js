@@ -30,7 +30,7 @@ function AppContent() {
                     <Button component={Link} to={'/my-team'} color="inherit">My Team</Button>
                 </Toolbar>
             </AppBar>
-            <Container maxWidth="sm">
+            <Container maxWidth={'md'}>
                 <Switch>
                     <Route path="/upcoming-games">
                         <UpcomingGamePage />
