@@ -1,5 +1,5 @@
-import React, { useEffect} from 'react';
-import {connect, useDispatch} from "react-redux";
+import React from 'react';
+import {connect} from "react-redux";
 import Table from "@material-ui/core/Table";
 import TableHead from "@material-ui/core/TableHead";
 import TableCell from "@material-ui/core/TableCell";
@@ -13,10 +13,6 @@ import { useTranslation } from 'react-i18next';
 function MyTeamPage(props) {
     const { myTeam, loading } = props
     const { t } = useTranslation();
-    const dispatch = useDispatch()
-    useEffect(() => {
-        dispatch({type: 'FETCH_MY_TEAM_REQUESTED', payload: { teamId: '406d35ee-421a-4d45-9f34-1834d5acd215' }})
-    }, [dispatch]);
 
     if (loading) return <LoadingIndicator />
 
