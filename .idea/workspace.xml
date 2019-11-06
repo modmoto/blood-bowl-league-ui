@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13f0a0ce-9745-4f5b-ba30-6b4795564315" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Backend/TeamRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Backend/TeamRepository.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyTeam/MyTeamPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyTeam/MyTeamPage.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +94,7 @@
       <workItem from="1572607396178" duration="2962000" />
       <workItem from="1572628252307" duration="4479000" />
       <workItem from="1572893739400" duration="15659000" />
-      <workItem from="1572938269823" duration="3834000" />
+      <workItem from="1572938269823" duration="5998000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1572541845823</created>
@@ -265,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572990625844</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="get full team now for site">
+      <created>1572991094293</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1572991094293</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,6 +315,7 @@
     <MESSAGE value="added loading indikator" />
     <MESSAGE value="added working translations" />
     <MESSAGE value="use react hooks again" />
-    <option name="LAST_COMMIT_MESSAGE" value="use react hooks again" />
+    <MESSAGE value="get full team now for site" />
+    <option name="LAST_COMMIT_MESSAGE" value="get full team now for site" />
   </component>
 </project>
