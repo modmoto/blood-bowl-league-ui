@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13f0a0ce-9745-4f5b-ba30-6b4795564315" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/MyTeam/BuyPlayerPanel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Backend/TeamRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Backend/TeamRepository.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyTeam/MyTeamPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyTeam/MyTeamPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyTeam/MyTeamPageReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyTeam/MyTeamPageReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyTeam/MyTeamPageSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyTeam/MyTeamPageSaga.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -144,7 +139,7 @@
       <workItem from="1572628252307" duration="4479000" />
       <workItem from="1572893739400" duration="15659000" />
       <workItem from="1572938269823" duration="5998000" />
-      <workItem from="1573089971110" duration="5478000" />
+      <workItem from="1573089971110" duration="5826000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1572541845823</created>
@@ -391,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573072939306</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="check if this runs on heroku">
+      <created>1573161961394</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1573161961398</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -411,7 +413,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="loading from store and combined reducers working" />
     <MESSAGE value="first real backendcall for games working" />
     <MESSAGE value="added own component for list panel" />
     <MESSAGE value="added basic gameday list panel" />
@@ -436,6 +437,7 @@
     <MESSAGE value="moved to own file" />
     <MESSAGE value="some more translations on buttons" />
     <MESSAGE value="small refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="small refactor" />
+    <MESSAGE value="check if this runs on heroku" />
+    <option name="LAST_COMMIT_MESSAGE" value="check if this runs on heroku" />
   </component>
 </project>

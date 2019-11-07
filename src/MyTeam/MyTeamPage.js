@@ -18,7 +18,6 @@ function MyTeamPage(props) {
 
     if (loading) return <LoadingIndicator />
 
-    console.log(myTeam.teamVersion)
     const onBuyPlayerClick = () => {
         dispatch({
             type: 'BUY_PLAYER_REQUESTED',
@@ -30,9 +29,10 @@ function MyTeamPage(props) {
     }
 
 
+    const team = myTeam.team;
     return (
         <Box mt={3}>
-        <Typography variant='h5' pt={3}>{myTeam.teamName} ({t("races." + myTeam.raceId)})</Typography>
+        <Typography variant='h5' pt={3}>{team.teamName} ({t("races." + team.raceId)})</Typography>
         <Table>
             <TableHead>
                 <TableRow>
