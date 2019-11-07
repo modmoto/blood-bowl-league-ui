@@ -1,7 +1,16 @@
-import {fetchJson} from "./RepositoryBase";
+import {fetchJson, sendJson} from "./RepositoryBase";
 
-const BackendUrl = 'https://teams-readhost.herokuapp.com/api'
+const ReadURl = 'https://teams-readhost.herokuapp.com/api'
+const WriteUrl = 'https://teams-host.herokuapp.com/api'
 
 export async function fetchMyTeamCall(teamId) {
-    return await fetchJson(BackendUrl, "/Teams/" + teamId + "/full")
+    return await fetchJson(ReadURl, "/Teams/" + teamId + "/full")
+}
+
+export async function buyPlayer(teamId, playerTypeId, teamVersion) {
+    const body = {
+        PlayerTypeId: playerTypeId,
+        TeamVersion: teamVersion
+    }
+    return await sendJson(WriteUrl, "/Teams/" + teamId + "/buy-player", body)
 }

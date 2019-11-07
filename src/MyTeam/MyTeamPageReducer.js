@@ -20,6 +20,23 @@ export default function myTeamPageReducer(state = {
                 ...state,
                 loading: true
             };
+
+
+        case 'BUY_PLAYER_REQUESTED':
+            return {
+                ...state,
+                loading: true
+            };
+        case 'BUY_PLAYER_SUCEEDED':
+            return {
+                ...state,
+                loading: false
+            };
+        case 'BUY_PLAYER_FAILED':
+            return {
+                ...state,
+                loading: false
+            };
         default:
             return state
     }

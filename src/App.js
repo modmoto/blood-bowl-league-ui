@@ -8,8 +8,8 @@ import createSagaMiddleware from 'redux-saga'
 import fetchUpcomingGamesSaga from "./UpcominGames/UpcomingGamesSaga";
 import upcomingGamesReducer from "./UpcominGames/UpcomingGamesReducer";
 import myTeamPageReducer from "./MyTeam/MyTeamPageReducer";
-import fetchMyTeamSaga from "./MyTeam/MyTeamPageSaga";
 import AppContent from "./AppContent";
+import {buyPlayerSaga, fetchMyTeamSaga} from "./MyTeam/MyTeamPageSaga";
 
 const theme = createMuiTheme({
     palette: {
@@ -40,6 +40,7 @@ const store = createStore(
 
 sagaMiddleware.run(fetchUpcomingGamesSaga);
 sagaMiddleware.run(fetchMyTeamSaga);
+sagaMiddleware.run(buyPlayerSaga);
 
 function App() {
     return (

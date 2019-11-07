@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect} from "react-redux";
+import {connect, useDispatch} from "react-redux";
 import Table from "@material-ui/core/Table";
 import TableHead from "@material-ui/core/TableHead";
 import TableCell from "@material-ui/core/TableCell";
@@ -9,12 +9,26 @@ import TableBody from "@material-ui/core/TableBody";
 import {Box, Typography} from "@material-ui/core";
 import {LoadingIndicator} from "../UtilComponents/LoadingIndicator";
 import { useTranslation } from 'react-i18next';
+import BuyPlayerPanel from "./BuyPlayerPanel";
 
 function MyTeamPage(props) {
     const { myTeam, loading } = props
     const { t } = useTranslation();
+    const dispatch = useDispatch()
 
     if (loading) return <LoadingIndicator />
+
+    console.log(myTeam.teamVersion)
+    const onBuyPlayerClick = () => {
+        dispatch({
+            type: 'BUY_PLAYER_REQUESTED',
+            payload: {
+                teamId: '406d35ee-421a-4d45-9f34-1834d5acd215',
+                playerTypeId: 'HU_Blitzer',
+                teamVersion: myTeam.teamVersion}
+        })
+    }
+
 
     return (
         <Box mt={3}>
@@ -39,6 +53,7 @@ function MyTeamPage(props) {
                 ))}
             </TableBody>
         </Table>
+            <BuyPlayerPanel teamVersion={myTeam.teamVersion} onBuyButtonClick={onBuyPlayerClick}/>
         </Box>
     )
 }
