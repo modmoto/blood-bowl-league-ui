@@ -18,11 +18,16 @@ const de = {
             "No": "Nr",
             "Name": "Name",
             "Type": "Typ",
+            "BuyPlayerTypeLabel": "Spielertyp",
+            "BuyPlayerButton": "Kaufe Spieler",
         },
 
         playerTypes: {
             "HU_Blitzer": "Blitzer",
-            "HU_LineMan": "Feldspieler"
+            "HU_LineMan": "Feldspieler",
+            "HU_Catcher": "Fänger",
+            "HU_Ogre": "Oger",
+            "HU_Thrower": "Werfer",
         },
 
         races: {

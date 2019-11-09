@@ -18,11 +18,16 @@ const en = {
             "No": "No",
             "Name": "Name",
             "Type": "Type",
+            "BuyPlayerTypeLabel": "Playertype",
+            "BuyPlayerButton": "Buy player",
         },
 
         playerTypes: {
             "HU_Blitzer": "Blitzer",
-            "HU_LineMan": "Lineman"
+            "HU_LineMan": "Lineman",
+            "HU_Catcher": "Catcher",
+            "HU_Ogre": "Ogre",
+            "HU_Thrower": "Thrower",
         },
 
         races: {

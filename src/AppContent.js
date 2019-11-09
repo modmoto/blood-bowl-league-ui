@@ -16,7 +16,6 @@ function AppContent() {
     const dispatch = useDispatch()
     const { t } = useTranslation()
 
-
     useEffect(() => {
         dispatch({type: 'FETCH_MY_TEAM_REQUESTED', payload: { teamId: '406d35ee-421a-4d45-9f34-1834d5acd215' }})
     }, [dispatch]);
@@ -43,7 +42,6 @@ function AppContent() {
                 </Toolbar>
             </AppBar>
 
-
             <Container maxWidth={'md'}>
                 <Switch>
                     <Route path="/upcoming-games">
@@ -63,7 +61,6 @@ function AppContent() {
 
 function ToolbarButton(props) {
     return <Button size={'large'} component={Link} to={props.to}>{props.children}</Button>
-
 }
 
 export default withTranslation()(AppContent);
