@@ -8,9 +8,9 @@ import FormControl from "@material-ui/core/FormControl";
 import Box from "@material-ui/core/Box";
 
 function BuyPlayerPanel(props) {
-    const { allowedPlayers, value, onBuyButtonClick, t, onPlayerTypeChange } = props
+    const { allowedPlayers, value, onBuyButtonClick, t, onPlayerTypeChange } = props;
     const playerSelects = allowedPlayers.map(p =>
-        <MenuItem key={p.playerTypeId} value={p.playerTypeId}>{t(`playerTypes.${p.playerTypeId}`)}</MenuItem>)
+        <MenuItem key={p.playerTypeId} value={p.playerTypeId}>{t(`playerTypes.${p.playerTypeId}`)}</MenuItem>);
 
     return(
         <FormControl>

@@ -2,8 +2,7 @@ export async function fetchJson(baseUrl, path) {
     const url = `${baseUrl}${path}`;
 
     let response = await fetch(url, { method: 'GET' });
-    let object = await response.json();
-    return object;
+    return await response.json();
 }
 
 export async function sendJson(baseUrl, path, body) {

@@ -8,12 +8,12 @@ import BuyPlayerPanel from "./BuyPlayerPanel";
 import PlayerListForTeam from "./PlayerListForTeam";
 
 function MyTeamPage(props) {
-    const { myTeam, loading } = props
-    const { t } = useTranslation()
-    const dispatch = useDispatch()
-    const [selectedPlayerType, setSelectedPlayer] = useState('')
+    const { myTeam, loading } = props;
+    const { t } = useTranslation();
+    const dispatch = useDispatch();
+    const [selectedPlayerType, setSelectedPlayer] = useState('');
 
-    if (loading) return <LoadingIndicator />
+    if (loading) return <LoadingIndicator />;
 
     const team = myTeam.team;
 
@@ -25,7 +25,7 @@ function MyTeamPage(props) {
                 playerTypeId: type,
                 teamVersion: team.version}
         })
-    }
+    };
 
     return (
         <Box mt={3}>
@@ -41,7 +41,7 @@ function MyTeamPage(props) {
 }
 
 function mapStateToProps(state) {
-    const { myTeam, loading } = state.myTeamState
+    const { myTeam, loading } = state.myTeamState;
     return {
         myTeam,
         loading

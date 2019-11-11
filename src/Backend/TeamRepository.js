@@ -13,6 +13,6 @@ export async function buyPlayer(teamId, playerTypeId, teamVersion) {
     const body = {
         PlayerTypeId: playerTypeId,
         TeamVersion: teamVersion
-    }
+    };
     return await sendJson(WriteUrl, "/Teams/" + teamId + "/buy-player", body)
 }

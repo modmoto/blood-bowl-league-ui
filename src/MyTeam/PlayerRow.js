@@ -7,7 +7,7 @@ import LevelUpCellContent from "./LevelUpCellContent";
 
 
 function PlayerRow(props) {
-    const { player, index, t} = props
+    const { player, index, t} = props;
     return(
         <TableRow key={index}>
             <TableCell component="th" scope="row">
