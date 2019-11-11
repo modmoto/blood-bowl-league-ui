@@ -8,7 +8,7 @@ import TableBody from "@material-ui/core/TableBody";
 import PlayerRow from "./PlayerRow";
 
 function PlayerListForTeam(props) {
-    const { playerList, t } = props
+    const { playerList, t } = props;
 
     return(
         <Table>
@@ -16,10 +16,10 @@ function PlayerListForTeam(props) {
                 <TableRow>
                     <TableCell>{t("teamPage.No")}</TableCell>
                     <TableCell>{t("teamPage.Type")}</TableCell>
-                    <TableCell>{t("teamPage.MA")}</TableCell>
-                    <TableCell>{t("teamPage.ST")}</TableCell>
-                    <TableCell>{t("teamPage.AG")}</TableCell>
-                    <TableCell>{t("teamPage.AV")}</TableCell>
+                    <StatCell>{t("teamPage.MA")}</StatCell>
+                    <StatCell>{t("teamPage.ST")}</StatCell>
+                    <StatCell>{t("teamPage.AG")}</StatCell>
+                    <StatCell>{t("teamPage.AV")}</StatCell>
                     <TableCell>{t("teamPage.PlayerSkills")}</TableCell>
                     <TableCell>{t("teamPage.SSP")}</TableCell>
                 </TableRow>
@@ -34,6 +34,10 @@ function PlayerListForTeam(props) {
             </TableBody>
         </Table>
     )
+}
+
+function StatCell(props) {
+    return <TableCell size={"small"}>{props.children}</TableCell>
 }
 
 export default withTranslation()(PlayerListForTeam)
