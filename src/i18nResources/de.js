@@ -18,6 +18,12 @@ const de = {
             "No": "Nr",
             "Name": "Name",
             "Type": "Typ",
+            "SSP": "SSP",
+            "MA": "BW",
+            "ST": "ST",
+            "AG": "GE",
+            "AV": "RW",
+            "PlayerSkills": "Skills",
             "BuyPlayerTypeLabel": "Spielertyp",
             "BuyPlayerButton": "Kaufe Spieler",
         },
@@ -28,6 +34,24 @@ const de = {
             "HU_Catcher": "Fänger",
             "HU_Ogre": "Oger",
             "HU_Thrower": "Werfer",
+        },
+
+        skills: {
+            "Block": "Blocken",
+            "Catch": "Fangsicher",
+            "Dodge": "Ausweichen",
+            "Frenzy": "Raserei",
+            "JumpUp": "Aufpsringen",
+            "DumpOff": "Abspielen",
+            "Shadowing": "Schatten",
+            "Stab": "Erstechen",
+            "MightyBlow": "Brutal",
+            "SureHands": "Ballgefühl",
+            "Pass": "Passen",
+            "PlusOneAgility": "+GE",
+            "PlusOneArmor": "+RW",
+            "PlusOneMovement": "+BW",
+            "PlusOneStrength": "+ST"
         },
 
         races: {
