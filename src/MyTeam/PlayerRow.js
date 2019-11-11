@@ -3,7 +3,7 @@ import {withTranslation} from "react-i18next";
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
 import SkillCell from "./SkillCell";
-import LevelUpCellContent from "./LevelUpCellContent";
+import StarPlayerCellContent from "./StarPlayerCellContent";
 
 
 function PlayerRow(props) {
@@ -22,7 +22,7 @@ function PlayerRow(props) {
                 <SkillCell skills={player.skills} startingSkills={player.playerConfig.startingSkills}/>
             </TableCell>
             <TableCell>
-                <LevelUpCellContent ssp={player.starPlayerPoints}/>
+                <StarPlayerCellContent starPlayerPoints={player.starPlayerPoints}/>
             </TableCell>
         </TableRow>
     )
