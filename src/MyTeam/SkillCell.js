@@ -1,6 +1,7 @@
 import React from "react";
 import {withTranslation} from "react-i18next";
 import {green} from "@material-ui/core/colors";
+import Box from "@material-ui/core/Box";
 
 function SkillCell(props) {
     const { startingSkills, skills, t} = props;
@@ -10,12 +11,12 @@ function SkillCell(props) {
     const additionalSkillstring = additionalSkills.map(s => t("skills." + s)).join(', ');
     return(
         <>
-            <div>
+            <Box>
                 {startingSkilltring}
-            </div>
-            <div color={green}>
+            </Box>
+            <Box color={green[600]}>
                 {additionalSkillstring}
-            </div>
+            </Box>
         </>
     )
 }
