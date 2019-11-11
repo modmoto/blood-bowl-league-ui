@@ -22,7 +22,7 @@ function PlayerRow(props) {
                 <SkillCell skills={player.skills} startingSkills={player.playerConfig.startingSkills}/>
             </TableCell>
             <TableCell>
-                <StarPlayerCellContent starPlayerPoints={player.starPlayerPoints}/>
+                <StarPlayerCellContent player={player}/>
             </TableCell>
         </TableRow>
     )
