@@ -16,9 +16,11 @@ function StarPlayerCellContent(props) {
             <Box style={{float: "left"}} pr={1.5}>
                 {player.starPlayerPoints} / {nexLevelUp ? nexLevelUp : '*'}
             </Box>
-            <Box color={yellow[700]}>
-                {hasLevelUpToDo ? <DoubleArrow color='inherit'/> : null}
-            </Box>
+            {hasLevelUpToDo ?
+                <Box color={yellow[700]}>
+                    <DoubleArrow color='inherit'/>
+                </Box>
+                : null}
         </>
     )
 }
