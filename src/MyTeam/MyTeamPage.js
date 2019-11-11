@@ -38,7 +38,6 @@ function MyTeamPage(props) {
                 <TableHead>
                     <TableRow>
                         <TableCell>{t("teamPage.No")}</TableCell>
-                        <TableCell>{t("teamPage.Name")}</TableCell>
                         <TableCell>{t("teamPage.Type")}</TableCell>
                     </TableRow>
                 </TableHead>
@@ -48,7 +47,6 @@ function MyTeamPage(props) {
                             <TableCell component="th" scope="row">
                                 {index + 1}
                             </TableCell>
-                            <TableCell>{player.name}</TableCell>
                             <TableCell>{t("playerTypes." + player.playerTypeId)}</TableCell>
                         </TableRow>
                     ))}

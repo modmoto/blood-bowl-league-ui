@@ -5,7 +5,6 @@ import MenuItem from "@material-ui/core/MenuItem";
 import {withTranslation} from "react-i18next";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
-import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 
 function BuyPlayerPanel(props) {
