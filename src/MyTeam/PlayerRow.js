@@ -10,9 +10,7 @@ function PlayerRow(props) {
     const { player, index, t} = props;
     return(
         <TableRow key={index}>
-            <TableCell component="th" scope="row">
-                {index + 1}
-            </TableCell>
+            <TableCell component="th" scope="row">{player.playerPositionNumber}</TableCell>
             <TableCell>{t("playerTypes." + player.playerTypeId)}</TableCell>
             <TableCell>{player.playerConfig.playerStats.movement}</TableCell>
             <TableCell>{player.playerConfig.playerStats.strength}</TableCell>
