@@ -1,26 +1,14 @@
 import React from "react";
-import {Box} from "@material-ui/core";
-import {DoubleArrow} from "@material-ui/icons";
-import {yellow} from "@material-ui/core/colors";
-
 const levelUpPoints = [ 6, 16, 31, 51, 76, 176 ];
 
 function StarPlayerCellContent(props) {
-    const { player } = props;
+    const { starPlayerPoints } = props;
 
-    const nexLevelUp = levelUpPoints.filter(p => p > player.starPlayerPoints)[0];
-    const hasLevelUpToDo = player.CanRegisterLevelUpSkillPointRoll || player.HasFreeSkill;
+    const nexLevelUp = levelUpPoints.filter(p => p > starPlayerPoints)[0];
 
     return(
         <>
-            <Box style={{float: "left"}} pr={1.5}>
-                {player.starPlayerPoints} / {nexLevelUp ? nexLevelUp : '*'}
-            </Box>
-            {hasLevelUpToDo ?
-                <Box color={yellow[700]}>
-                    <DoubleArrow color='inherit'/>
-                </Box>
-                : null}
+            {starPlayerPoints} / {nexLevelUp ? nexLevelUp : '*'}
         </>
     )
 }
