@@ -17,7 +17,7 @@ function PlayerListForTeam(props) {
                     <TableCell>{t("teamPage.No")}</TableCell>
                     <TableCell>{t("teamPage.Type")}</TableCell>
                     <StatCell>{t("teamPage.MA")}</StatCell>
-                    <StatCell>{t("teamPage.ST")}lolol</StatCell>
+                    <StatCell>{t("teamPage.ST")}</StatCell>
                     <StatCell>{t("teamPage.AG")}</StatCell>
                     <StatCell>{t("teamPage.AV")}</StatCell>
                     <TableCell>{t("teamPage.PlayerSkills")}</TableCell>

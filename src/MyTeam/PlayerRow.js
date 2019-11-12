@@ -14,10 +14,10 @@ function PlayerRow(props) {
                 {index + 1}
             </TableCell>
             <TableCell>{t("playerTypes." + player.playerTypeId)}</TableCell>
-            <TableCell>7</TableCell>
-            <TableCell>3</TableCell>
-            <TableCell>3</TableCell>
-            <TableCell>4</TableCell>
+            <TableCell>{player.playerConfig.playerStats.movement}</TableCell>
+            <TableCell>{player.playerConfig.playerStats.strength}</TableCell>
+            <TableCell>{player.playerConfig.playerStats.agility}</TableCell>
+            <TableCell>{player.playerConfig.playerStats.armor}</TableCell>
             <TableCell>
                 <SkillCell skills={player.skills} startingSkills={player.playerConfig.startingSkills}/>
             </TableCell>
