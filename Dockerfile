@@ -1,5 +1,5 @@
 # Stage 1 - the build process
-FROM node:13.1.0 as build-deps
+FROM node as build-deps
 WORKDIR /usr/src/app
 COPY package.json yarn.lock ./
 RUN yarn
