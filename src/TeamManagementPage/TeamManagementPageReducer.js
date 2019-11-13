@@ -30,13 +30,16 @@ export default function teamManagementPageReducer(state = {
             };
         case 'BUY_PLAYER_SUCEEDED':
             const player = action.playerToBuy;
-            const teamVersion = action.teamVersion;
-            let team = state.team;
-            team.teamVersion = teamVersion;
+            const team = state.team;
             team.playerList.push(player);
+
             return {
                 ...state,
-                team: team,
+                team: {
+                    ...team,
+                    teamVersion: (action.teamVersion + 1),
+                    playerList: team.playerList
+                },
                 buyingPlayer: false
             };
         case 'BUY_PLAYER_FAILED':

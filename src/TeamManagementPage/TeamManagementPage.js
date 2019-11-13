@@ -21,18 +21,23 @@ function TeamManagementPage(props) {
         dispatch({
             type: 'BUY_PLAYER_REQUESTED',
             payload: {
-                teamId: '406d35ee-421a-4d45-9f34-1834d5acd215',
+                teamId: fullTeam.teamId,
                 playerTypeId: type,
                 teamVersion: fullTeam.version},
             playerToBuy: {
                 playerTypeId: type,
-                playerPositionNumber: 13,
+                playerPositionNumber: "nn",
+                starPlayerPoints: 0,
+                skills: [
+                ],
                 playerConfig: {
+                    startingSkills: [
+                    ],
                     playerStats: {
-                        movement: 5,
-                        strength: 3,
-                        agility: 4,
-                        armor: 12,
+                        movement: "nn",
+                        strength: "nn",
+                        agility: "nn",
+                        armor: "nn",
                     }
                 }
             }
