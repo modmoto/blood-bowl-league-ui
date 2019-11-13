@@ -7,9 +7,9 @@ import {createStore, applyMiddleware, combineReducers} from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import fetchUpcomingGamesSaga from "./UpcominGames/UpcomingGamesSaga";
 import upcomingGamesReducer from "./UpcominGames/UpcomingGamesReducer";
-import myTeamPageReducer from "./MyTeam/MyTeamPageReducer";
 import AppContent from "./AppContent";
-import {buyPlayerSaga, fetchMyTeamSaga} from "./MyTeam/MyTeamPageSaga";
+import teamManagementPageReducer from "./TeamManagementPage/TeamManagementPageReducer";
+import {buyPlayerSaga, fetchTeamSaga} from "./TeamManagementPage/TeamManagementPageSaga";
 
 const theme = createMuiTheme({
     palette: {
@@ -31,7 +31,7 @@ const theme = createMuiTheme({
 const sagaMiddleware = createSagaMiddleware();
 const rootReducer = combineReducers({
     upcomingGameState: upcomingGamesReducer,
-    myTeamState: myTeamPageReducer,
+    teamState: teamManagementPageReducer,
 })
 const store = createStore(
     rootReducer,
@@ -39,7 +39,7 @@ const store = createStore(
 );
 
 sagaMiddleware.run(fetchUpcomingGamesSaga);
-sagaMiddleware.run(fetchMyTeamSaga);
+sagaMiddleware.run(fetchTeamSaga);
 sagaMiddleware.run(buyPlayerSaga);
 
 function App() {

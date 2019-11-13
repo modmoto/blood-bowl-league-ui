@@ -16,6 +16,6 @@ export async function sendJson(baseUrl, path, body) {
             'Content-Type': 'application/json'
         }
     });
-    if (response.status !== 201) return null;
+    if (response.status !== 201 && response.status !== 200) return null;
     return await response.json();
 }

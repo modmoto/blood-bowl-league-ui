@@ -1,6 +1,6 @@
 import Button from "@material-ui/core/Button";
 import React from "react";
-import {Select} from "@material-ui/core";
+import {Select, Typography} from "@material-ui/core";
 import MenuItem from "@material-ui/core/MenuItem";
 import {withTranslation} from "react-i18next";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -8,7 +8,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Box from "@material-ui/core/Box";
 
 function BuyPlayerPanel(props) {
-    const { allowedPlayers, value, onBuyButtonClick, t, onPlayerTypeChange } = props;
+    const { allowedPlayers, value, onBuyButtonClick, t, onPlayerTypeChange, teamMoney} = props;
     const playerSelects = allowedPlayers.map(p =>
         <MenuItem key={p.playerTypeId} value={p.playerTypeId}>{t(`playerTypes.${p.playerTypeId}`)}</MenuItem>);
 
@@ -27,6 +27,9 @@ function BuyPlayerPanel(props) {
             </Select>
             <Box pt={3}>
                 <Button onClick={onBuyButtonClick}>{t('teamPage.BuyPlayerButton')}</Button>
+            </Box>
+            <Box pt={3}>
+                <Typography variant='h5'>{teamMoney} G</Typography>
             </Box>
         </FormControl>
     )

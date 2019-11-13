@@ -3,7 +3,6 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import { Switch, Route, Link } from "react-router-dom";
-import MyTeamPage from "./MyTeam/MyTeamPage";
 import UpcomingGamePage from "./UpcominGames/UpcomingGamesPage";
 import Home from "./Home/HomePage";
 import {useTranslation, withTranslation} from 'react-i18next';
@@ -11,13 +10,14 @@ import {useTranslation, withTranslation} from 'react-i18next';
 import Container from "@material-ui/core/Container";
 import {useDispatch} from 'react-redux'
 import i18n from "i18next";
+import TeamManagementPage from "./TeamManagementPage/TeamManagementPage";
 
 function AppContent() {
     const dispatch = useDispatch()
     const { t } = useTranslation()
 
     useEffect(() => {
-        dispatch({type: 'FETCH_MY_TEAM_REQUESTED', payload: { teamId: '406d35ee-421a-4d45-9f34-1834d5acd215' }})
+        dispatch({type: 'FETCH_TEAM_REQUESTED', payload: { teamId: '406d35ee-421a-4d45-9f34-1834d5acd215' }})
     }, [dispatch]);
 
     useEffect(() => {
@@ -48,7 +48,7 @@ function AppContent() {
                         <UpcomingGamePage />
                     </Route>
                     <Route path="/my-team">
-                        <MyTeamPage />
+                        <TeamManagementPage />
                     </Route>
                     <Route path="/">
                         <Home />
