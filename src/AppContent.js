@@ -24,6 +24,10 @@ function AppContent() {
         dispatch({type: 'UPCOMING_GAMES_REQUESTED', payload: { seasonId: '7a097eae-be35-4b4d-a23d-98a6b57534f3' }})
     }, [dispatch]);
 
+    useEffect(() => {
+        dispatch({type: 'ALL_RACES_REQUESTED'})
+    }, [dispatch]);
+
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng);
     }

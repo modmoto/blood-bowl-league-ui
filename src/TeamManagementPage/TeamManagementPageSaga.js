@@ -1,5 +1,5 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
-import {buyPlayer, fetchTeamCall} from "../Backend/TeamRepository";
+import {buyPlayer, fetchRacesCall, fetchTeamCall} from "../Backend/TeamRepository";
 
 function* fetchTeam(action) {
     try {
@@ -23,6 +23,19 @@ function* buyPlayerFunc(action) {
         yield put({type: "BUY_PLAYER_SUCEEDED", playerToBuy: playerToBuy });
     } catch (e) {
         yield put({type: "BUY_PLAYER_FAILED", message: e.message});
+    }
+}
+
+export function* fetchRacesSaga() {
+    yield takeEvery("ALL_RACES_REQUESTED", fetchRacesFunc)
+}
+
+function* fetchRacesFunc() {
+    try {
+        const races = yield call(fetchRacesCall);
+        yield put({type: "ALL_RACES_SUCEEDED", races: races });
+    } catch (e) {
+        yield put({type: "ALL_RACES__FAILED", message: e.message});
     }
 }
 

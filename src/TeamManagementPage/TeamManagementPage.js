@@ -3,12 +3,12 @@ import {connect, useDispatch} from "react-redux";
 
 import {Box, Typography} from "@material-ui/core";
 import {LoadingIndicator} from "../UtilComponents/LoadingIndicator";
-import { useTranslation } from 'react-i18next';
+import {useTranslation} from 'react-i18next';
 import BuyPlayerPanel from "./BuyPlayerPanel";
 import PlayerListForTeam from "./PlayerListForTeam";
 
 function TeamManagementPage(props) {
-    const { team, loading } = props;
+    const { team, loading, races } = props;
     const { t } = useTranslation();
     const dispatch = useDispatch();
     const [selectedPlayerType, setSelectedPlayer] = useState('');
@@ -18,6 +18,8 @@ function TeamManagementPage(props) {
     const fullTeam = team.team;
 
     const onBuyPlayerClick = (type) => {
+        const raceOfPlayer = races.filter(r => r.raceConfigId === fullTeam.raceId)[0];
+        const playerConfig = raceOfPlayer.allowedPlayers.filter(p => p.playerTypeId === type)[0];
         dispatch({
             type: 'BUY_PLAYER_REQUESTED',
             payload: {
@@ -26,22 +28,11 @@ function TeamManagementPage(props) {
                 teamVersion: fullTeam.version},
             playerToBuy: {
                 playerTypeId: type,
-                playerPositionNumber: "nn",
+                playerPositionNumber: team.playerList.length + 1,
                 starPlayerPoints: 0,
-                skills: [
-                ],
-                playerConfig: {
-                    startingSkills: [
-                    ],
-                    playerStats: {
-                        movement: "nn",
-                        strength: "nn",
-                        agility: "nn",
-                        armor: "nn",
-                    }
-                }
+                skills: playerConfig.startingSkills.map(s => s.skillId),
+                playerConfig: playerConfig
             }
-
         })
     };
 
@@ -61,10 +52,11 @@ function TeamManagementPage(props) {
 }
 
 function mapStateToProps(state) {
-    const { team, loading } = state.teamState;
+    const { team, loading, races } = state.teamState;
     return {
         team,
-        loading
+        loading,
+        races
     }
 }
 
