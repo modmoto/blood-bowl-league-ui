@@ -9,7 +9,7 @@ import fetchUpcomingGamesSaga from "./UpcominGames/UpcomingGamesSaga";
 import upcomingGamesReducer from "./UpcominGames/UpcomingGamesReducer";
 import AppContent from "./AppContent";
 import teamManagementPageReducer from "./TeamManagementPage/TeamManagementPageReducer";
-import {buyPlayerSaga, fetchTeamSaga} from "./TeamManagementPage/TeamManagementPageSaga";
+import {buyPlayerSaga, fetchRacesSaga, fetchTeamSaga} from "./TeamManagementPage/TeamManagementPageSaga";
 
 const theme = createMuiTheme({
     palette: {
@@ -41,6 +41,7 @@ const store = createStore(
 sagaMiddleware.run(fetchUpcomingGamesSaga);
 sagaMiddleware.run(fetchTeamSaga);
 sagaMiddleware.run(buyPlayerSaga);
+sagaMiddleware.run(fetchRacesSaga);
 
 function App() {
     return (

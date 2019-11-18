@@ -14,7 +14,7 @@ export default function teamManagementPageReducer(state = {
             return {
                 ...state,
                 team: null,
-                loading: false
+                loading: true
             };
         case 'FETCH_TEAM_REQUESTED':
             return {
@@ -45,7 +45,26 @@ export default function teamManagementPageReducer(state = {
         case 'BUY_PLAYER_FAILED':
             return {
                 ...state,
-                buyingPlayer: false
+                buyingPlayer: true
+            };
+
+
+        case 'ALL_RACES_REQUESTED':
+            return {
+                ...state,
+                loading: true
+            };
+        case 'ALL_RACES_SUCEEDED':
+            return {
+                ...state,
+                races: action.races,
+                loading: false
+            };
+        case 'ALL_RACES_FAILED':
+            return {
+                ...state,
+                races: null,
+                loading: true
             };
         default:
             return state
