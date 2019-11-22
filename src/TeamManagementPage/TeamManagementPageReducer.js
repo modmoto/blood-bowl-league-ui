@@ -10,12 +10,6 @@ export default function teamManagementPageReducer(state = {
                 team: action.team,
                 loading: false
             };
-        case 'FETCH_TEAM_FAILED':
-            return {
-                ...state,
-                team: null,
-                loading: true
-            };
         case 'FETCH_TEAM_REQUESTED':
             return {
                 ...state,
@@ -42,11 +36,6 @@ export default function teamManagementPageReducer(state = {
                 },
                 buyingPlayer: false
             };
-        case 'BUY_PLAYER_FAILED':
-            return {
-                ...state,
-                buyingPlayer: true
-            };
 
 
         case 'ALL_RACES_REQUESTED':
@@ -59,12 +48,6 @@ export default function teamManagementPageReducer(state = {
                 ...state,
                 races: action.races,
                 loading: false
-            };
-        case 'ALL_RACES_FAILED':
-            return {
-                ...state,
-                races: null,
-                loading: true
             };
         default:
             return state

@@ -10,7 +10,10 @@ export async function fetchJson(baseUrl, path) {
     }
 
     catch (e) {
-        // 500er loggen
+        window.store.dispatch({
+            type: 'BACKEN_GET_CALL_FAILED',
+            message: e.message
+        })
     }
 }
 
@@ -35,7 +38,10 @@ export async function sendJson(baseUrl, path, body) {
 
     }
     catch (e) {
-        // 500er loggen
+        window.store.dispatch({
+            type: 'BACKEN_POST_CALL_FAILED',
+            message: e.message
+        })
     }
 
     return null;

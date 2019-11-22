@@ -39,6 +39,8 @@ const store = createStore(
     applyMiddleware(sagaMiddleware)
 );
 
+window.store = store;
+
 sagaMiddleware.run(fetchUpcomingGamesSaga);
 sagaMiddleware.run(fetchTeamSaga);
 sagaMiddleware.run(buyPlayerSaga);
