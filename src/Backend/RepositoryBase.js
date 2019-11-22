@@ -4,6 +4,7 @@ export async function fetchJson(baseUrl, path) {
     try {
         let response = await fetch(url, { method: 'GET' });
         if (response.status !== 200) {
+            alert('notFound')
             // 404er loggen
         }
         return await response.json();
@@ -11,7 +12,7 @@ export async function fetchJson(baseUrl, path) {
 
     catch (e) {
         window.store.dispatch({
-            type: 'BACKEN_GET_CALL_FAILED',
+            type: 'BACKEND_GET_CALL_FAILED',
             message: e.message
         })
     }
@@ -31,6 +32,7 @@ export async function sendJson(baseUrl, path, body) {
         });
 
         if (response.status !== 201 && response.status !== 200) {
+            alert("error")
             // 400er etc loggen
         }
 
@@ -39,7 +41,7 @@ export async function sendJson(baseUrl, path, body) {
     }
     catch (e) {
         window.store.dispatch({
-            type: 'BACKEN_POST_CALL_FAILED',
+            type: 'BACKEND_POST_CALL_FAILED',
             message: e.message
         })
     }
