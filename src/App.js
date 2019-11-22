@@ -31,8 +31,9 @@ const theme = createMuiTheme({
 const sagaMiddleware = createSagaMiddleware();
 const rootReducer = combineReducers({
     upcomingGameState: upcomingGamesReducer,
-    teamState: teamManagementPageReducer,
-})
+    teamState: teamManagementPageReducer
+});
+
 const store = createStore(
     rootReducer,
     applyMiddleware(sagaMiddleware)
