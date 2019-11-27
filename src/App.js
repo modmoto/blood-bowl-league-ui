@@ -10,6 +10,7 @@ import upcomingGamesReducer from "./UpcominGames/UpcomingGamesReducer";
 import AppContent from "./AppContent";
 import teamManagementPageReducer from "./TeamManagementPage/TeamManagementPageReducer";
 import {buyPlayerSaga, fetchRacesSaga, fetchTeamSaga} from "./TeamManagementPage/TeamManagementPageSaga";
+import globalErrorStateReducer from "./GlobalErrorStateReducer";
 
 const theme = createMuiTheme({
     palette: {
@@ -31,7 +32,8 @@ const theme = createMuiTheme({
 const sagaMiddleware = createSagaMiddleware();
 const rootReducer = combineReducers({
     upcomingGameState: upcomingGamesReducer,
-    teamState: teamManagementPageReducer
+    teamState: teamManagementPageReducer,
+    globalState: globalErrorStateReducer
 });
 
 const store = createStore(

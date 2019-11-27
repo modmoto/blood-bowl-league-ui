@@ -5,16 +5,17 @@ import Button from "@material-ui/core/Button";
 import { Switch, Route, Link } from "react-router-dom";
 import UpcomingGamePage from "./UpcominGames/UpcomingGamesPage";
 import Home from "./Home/HomePage";
-import {useTranslation, withTranslation} from 'react-i18next';
+import {useTranslation} from 'react-i18next';
 
 import Container from "@material-ui/core/Container";
-import {useDispatch} from 'react-redux'
+import {connect, useDispatch} from 'react-redux'
 import i18n from "i18next";
 import TeamManagementPage from "./TeamManagementPage/TeamManagementPage";
 
-function AppContent() {
-    const dispatch = useDispatch()
-    const { t } = useTranslation()
+function AppContent(props) {
+    const { errorOccured, result } = props;
+    const dispatch = useDispatch();
+    const { t } = useTranslation();
 
     useEffect(() => {
         dispatch({type: 'FETCH_TEAM_REQUESTED', payload: { teamId: '406d35ee-421a-4d45-9f34-1834d5acd215' }})
@@ -30,6 +31,10 @@ function AppContent() {
 
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng);
+    }
+
+    if (errorOccured) {
+        alert(result.type)
     }
 
     return(
@@ -67,4 +72,12 @@ function ToolbarButton(props) {
     return <Button size={'large'} component={Link} to={props.to}>{props.children}</Button>
 }
 
-export default withTranslation()(AppContent);
+function mapStateToProps(state) {
+    const { errorOccured, result } = state.globalState;
+    return {
+        errorOccured,
+        result
+    }
+}
+
+export default connect(mapStateToProps)(AppContent);

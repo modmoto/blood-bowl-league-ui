@@ -4,8 +4,12 @@ export async function fetchJson(baseUrl, path) {
     try {
         let response = await fetch(url, { method: 'GET' });
         if (response.status !== 200) {
-            alert('notFound')
-            // 404er loggen
+            window.store.dispatch({
+                type: 'BACKEND_GET_CALL_FAILED',
+                result: {
+                    type: 'notFound'
+                }
+            })
         }
         return await response.json();
     }
@@ -13,7 +17,10 @@ export async function fetchJson(baseUrl, path) {
     catch (e) {
         window.store.dispatch({
             type: 'BACKEND_GET_CALL_FAILED',
-            message: e.message
+            result: {
+                type: 'unknown',
+                message: e.message,
+            }
         })
     }
 }
@@ -22,9 +29,10 @@ export async function sendJson(baseUrl, path, body) {
     const url = `${baseUrl}${path}`;
 
     try {
+        const bodyAsObject = JSON.stringify(body);
         let response = await fetch(url, {
             method: 'POST',
-            body: JSON.stringify(body),
+            body: bodyAsObject,
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -32,8 +40,13 @@ export async function sendJson(baseUrl, path, body) {
         });
 
         if (response.status !== 201 && response.status !== 200) {
-            alert("error")
-            // 400er etc loggen
+            window.store.dispatch({
+                type: 'BACKEND_GET_CALL_FAILED',
+                result: {
+                    type: 'validationError',
+                    keys: bodyAsObject.problemDetails,
+                }
+            })
         }
 
         return await response.json();
@@ -42,7 +55,10 @@ export async function sendJson(baseUrl, path, body) {
     catch (e) {
         window.store.dispatch({
             type: 'BACKEND_POST_CALL_FAILED',
-            message: e.message
+            result: {
+                type: 'unknown',
+                message: e.message,
+            }
         })
     }
 
