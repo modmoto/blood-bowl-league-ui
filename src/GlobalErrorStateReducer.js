@@ -17,6 +17,11 @@ export default function globalErrorStateReducer(state = {
             return actionObject(action);
         case 'BACKEND_POST_CALL_FAILED':
             return actionObject(action);
+        case 'GLOBAL_ERROR_DISMISSED':
+            return {
+                ...state,
+                errorOccured: false
+            };
 
         default:
             return state

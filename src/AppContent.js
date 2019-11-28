@@ -41,6 +41,7 @@ function AppContent(props) {
     }
 
     const handleCloseErrorDialog = () => {
+        dispatch({type: 'GLOBAL_ERROR_DISMISSED'});
         setErrorDialogIsOpen(false);
     };
 
