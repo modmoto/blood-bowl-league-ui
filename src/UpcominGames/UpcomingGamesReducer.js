@@ -9,12 +9,6 @@ export default function upcomingGamesReducer(state = {
                 upcomingGames: action.upcomingGames,
                 loading: false
             };
-        case 'UPCOMING_GAMES_FAILED':
-            return {
-                ...state,
-                upcomingGames: [],
-                loading: false
-            };
         case 'UPCOMING_GAMES_REQUESTED':
             return {
                 ...state,

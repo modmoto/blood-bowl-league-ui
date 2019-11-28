@@ -8,12 +8,13 @@ import BuyPlayerPanel from "./BuyPlayerPanel";
 import PlayerListForTeam from "./PlayerListForTeam";
 
 function TeamManagementPage(props) {
+
     const { team, loading, races } = props;
     const { t } = useTranslation();
     const dispatch = useDispatch();
     const [selectedPlayerType, setSelectedPlayer] = useState('');
 
-    if (loading) return <LoadingIndicator />;
+    if (loading || !team) return <LoadingIndicator />;
 
     const fullTeam = team.team;
 

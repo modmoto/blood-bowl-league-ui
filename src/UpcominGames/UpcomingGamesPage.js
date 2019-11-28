@@ -6,7 +6,7 @@ import {LoadingIndicator} from "../UtilComponents/LoadingIndicator";
 function UpcomingGamePage(props) {
     var { upcomingGames, loading } = props;
 
-    if (loading) return <LoadingIndicator />
+    if (loading || !upcomingGames) return <LoadingIndicator />
 
     return (
         <GameDayListPanel gameDays = {upcomingGames}/>
