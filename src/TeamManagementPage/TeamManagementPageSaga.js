@@ -14,7 +14,8 @@ function* buyPlayerFunc(action) {
     const payload = action.payload;
     const playerToBuy = action.playerToBuy;
     const player = yield call(buyPlayer, payload.teamId, payload.playerTypeId, payload.teamVersion);
-    playerToBuy.playerId = player.playerId
+    if (!player) return;
+    playerToBuy.playerId = player.playerId;
     yield put({type: "BUY_PLAYER_SUCEEDED", playerToBuy: playerToBuy });
 }
 

@@ -48,6 +48,8 @@ export async function sendJson(baseUrl, path, body) {
                     keys: problem,
                 }
             })
+
+            return null;
         }
 
         return responseContent;
