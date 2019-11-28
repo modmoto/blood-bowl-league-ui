@@ -5,6 +5,12 @@ const en = {
             "GameDays": "Gamedays",
         },
 
+        globalErrorDialog: {
+            "Title": "You can not do that",
+            "Text": "This is not allowed",
+            "ButtonText": "Ok",
+        },
+
         homePage: {
             "Title": "Karlsruher Blood Bowl League",
             "SubTitle": "around Karlsruhe since 2008"

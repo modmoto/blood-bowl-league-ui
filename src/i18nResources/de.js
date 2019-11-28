@@ -5,6 +5,12 @@ const de = {
             "GameDays": "Spieltage",
         },
 
+        globalErrorDialog: {
+            "Title": "Das kannst du nicht tun",
+            "Text": "Das ist nicht erlaubt",
+            "ButtonText": "Ok",
+        },
+
         homePage: {
             "Title": "Karlsruher Blood Bowl Liga",
             "SubTitle": "in und um Karlsruhe seit 2008"

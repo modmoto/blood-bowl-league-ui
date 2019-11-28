@@ -11,11 +11,14 @@ import Container from "@material-ui/core/Container";
 import {connect, useDispatch} from 'react-redux'
 import i18n from "i18next";
 import TeamManagementPage from "./TeamManagementPage/TeamManagementPage";
+import GeneralErrorDialog from "./GeneralErrorDialog";
 
 function AppContent(props) {
     const { errorOccured, result } = props;
     const dispatch = useDispatch();
     const { t } = useTranslation();
+
+    const [errorDialogIsOpen, setErrorDialogIsOpen] = React.useState(false);
 
     useEffect(() => {
         dispatch({type: 'FETCH_TEAM_REQUESTED', payload: { teamId: '406d35ee-421a-4d45-9f34-1834d5acd215' }})
@@ -31,14 +34,26 @@ function AppContent(props) {
 
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng);
+    };
+
+    if (errorOccured && !errorDialogIsOpen) {
+        setErrorDialogIsOpen(true);
     }
 
-    if (errorOccured) {
-        alert(result.type)
-    }
+    const handleCloseErrorDialog = () => {
+        console.log('clicked close');
+        setErrorDialogIsOpen(false);
+    };
 
     return(
         <>
+            <GeneralErrorDialog
+                title={t("globalErrorDialog.Title")}
+                text={t("globalErrorDialog.Text")}
+                buttonText={t("globalErrorDialog.ButtonText")}
+                result={result}
+                open={errorDialogIsOpen}
+                handleClose={handleCloseErrorDialog}/>
             <AppBar position="static">
                 <Toolbar>
                     <ToolbarButton to={'/'}>KABBL</ToolbarButton>
