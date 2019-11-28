@@ -41,7 +41,6 @@ function AppContent(props) {
     }
 
     const handleCloseErrorDialog = () => {
-        console.log('clicked close');
         setErrorDialogIsOpen(false);
     };
 
