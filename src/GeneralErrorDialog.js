@@ -23,8 +23,10 @@ function GeneralErrorDialog(props) {
         setErrorDialogIsOpen(true);
     }
 
-    const unknownMessage = result.type === 'unknown' ? <UnknownMessage message = {result.message}/> : null;
-    const validationErrors = result.type === 'validationError' ? <ValidationErrors errors = {result.keys}/> : null;
+    const subtitle = t("globalErrorDialog.Text_" + result.type)
+
+    const unknownMessage = result.type === 'unknown' ? <UnknownMessage subtitle={subtitle} message={result.message}/> : null;
+    const validationErrors = result.type === 'validationError' ? <ValidationErrors keys = {result.keys}/> : null;
 
     return (
         <Dialog
@@ -36,7 +38,6 @@ function GeneralErrorDialog(props) {
             <DialogTitle id="alert-dialog-title">{t("globalErrorDialog.Title_" + result.type)}</DialogTitle>
             <DialogContent>
                 <DialogContentText id="alert-dialog-description">
-                    {t("globalErrorDialog.Text_" + result.type)}
                     {unknownMessage}
                     {validationErrors}
                 </DialogContentText>
@@ -59,23 +60,22 @@ function mapStateToProps(state) {
 }
 
 function UnknownMessage(props) {
+    const {subtitle, message} = props;
     return(
         <>
+            {subtitle}
             <br/>
-            {props.message}
+            {message}
         </>
     )
 }
 
 function ValidationErrors(props) {
     const { keys } = props;
-    const items = keys.map(k => <il>{k}</il>);
+    const items = keys.map(k => <><br/>{k.detail}</>);
     return(
         <>
-            <br/>
-            <ul>
-                {items}
-            </ul>
+            {items}
         </>
     )
 }

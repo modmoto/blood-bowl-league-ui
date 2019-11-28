@@ -38,18 +38,19 @@ export async function sendJson(baseUrl, path, body) {
             }
         });
 
+        const responseContent = await response.json();
         if (response.status !== 201 && response.status !== 200) {
-            const problems = await response.json();
+            const problem = responseContent['problem-details'];
             window.store.dispatch({
                 type: 'BACKEND_GET_CALL_FAILED',
                 result: {
                     type: 'validationError',
-                    keys: problems.problemDetails,
+                    keys: problem,
                 }
             })
         }
 
-        return await response.json();
+        return responseContent;
 
     }
     catch (e) {
