@@ -6,8 +6,12 @@ const en = {
         },
 
         globalErrorDialog: {
-            "Title": "You can not do that",
-            "Text": "This is not allowed",
+            "Title_unknown": "Unknown error",
+            "Title_notFound": "Not Found",
+            "Title_validationError": "You can not do that",
+            "Text_unknown": "An unknown error occured:",
+            "Text_validationError": "This is not allowed",
+            "Text_notFound": "Could not find what you where looking for",
             "ButtonText": "Ok",
         },
 

@@ -1,6 +1,10 @@
 export default function globalErrorStateReducer(state = {
     errorOccured: false,
-    message: null
+    message: null,
+    result: {
+        type: 'Unknown Error',
+        message: 'undefined'
+    }
 }, action) {
 
     function actionObject(action) {

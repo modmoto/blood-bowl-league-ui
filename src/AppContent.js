@@ -8,17 +8,14 @@ import Home from "./Home/HomePage";
 import {useTranslation} from 'react-i18next';
 
 import Container from "@material-ui/core/Container";
-import {connect, useDispatch} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import i18n from "i18next";
 import TeamManagementPage from "./TeamManagementPage/TeamManagementPage";
 import GeneralErrorDialog from "./GeneralErrorDialog";
 
-function AppContent(props) {
-    const { errorOccured, result } = props;
+function AppContent() {
     const dispatch = useDispatch();
     const { t } = useTranslation();
-
-    const [errorDialogIsOpen, setErrorDialogIsOpen] = React.useState(false);
 
     useEffect(() => {
         dispatch({type: 'FETCH_TEAM_REQUESTED', payload: { teamId: '406d35ee-421a-4d45-9f34-1834d5acd215' }})
@@ -36,24 +33,9 @@ function AppContent(props) {
         i18n.changeLanguage(lng);
     };
 
-    if (errorOccured && !errorDialogIsOpen) {
-        setErrorDialogIsOpen(true);
-    }
-
-    const handleCloseErrorDialog = () => {
-        dispatch({type: 'GLOBAL_ERROR_DISMISSED'});
-        setErrorDialogIsOpen(false);
-    };
-
     return(
         <>
-            <GeneralErrorDialog
-                title={t("globalErrorDialog.Title")}
-                text={t("globalErrorDialog.Text")}
-                buttonText={t("globalErrorDialog.ButtonText")}
-                result={result}
-                open={errorDialogIsOpen}
-                handleClose={handleCloseErrorDialog}/>
+            <GeneralErrorDialog/>
             <AppBar position="static">
                 <Toolbar>
                     <ToolbarButton to={'/'}>KABBL</ToolbarButton>
@@ -87,12 +69,4 @@ function ToolbarButton(props) {
     return <Button size={'large'} component={Link} to={props.to}>{props.children}</Button>
 }
 
-function mapStateToProps(state) {
-    const { errorOccured, result } = state.globalState;
-    return {
-        errorOccured,
-        result
-    }
-}
-
-export default connect(mapStateToProps)(AppContent);
+export default AppContent;

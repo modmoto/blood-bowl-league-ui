@@ -29,10 +29,9 @@ export async function sendJson(baseUrl, path, body) {
     const url = `${baseUrl}${path}`;
 
     try {
-        const bodyAsObject = JSON.stringify(body);
-        let response = await fetch(url, {
+        const response = await fetch(url, {
             method: 'POST',
-            body: bodyAsObject,
+            body: JSON.stringify(body),
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -40,11 +39,12 @@ export async function sendJson(baseUrl, path, body) {
         });
 
         if (response.status !== 201 && response.status !== 200) {
+            const problems = await response.json();
             window.store.dispatch({
                 type: 'BACKEND_GET_CALL_FAILED',
                 result: {
                     type: 'validationError',
-                    keys: bodyAsObject.problemDetails,
+                    keys: problems.problemDetails,
                 }
             })
         }

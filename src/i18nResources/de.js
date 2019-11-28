@@ -6,8 +6,12 @@ const de = {
         },
 
         globalErrorDialog: {
-            "Title": "Das kannst du nicht tun",
-            "Text": "Das ist nicht erlaubt",
+            "Title_unknown": "Unerwarteter Fehler",
+            "Title_notFound": "Nicht gefunden",
+            "Title_validationError":  "Das kannst du nicht tun",
+            "Text_unknown": "Ein unerwartete Fehler ist aufgetreten:",
+            "Text_validationError": "Das ist nicht erlaubt",
+            "Text_notFound": "Die Ressource konnte nicht gefunden werden",
             "ButtonText": "Ok",
         },
 
