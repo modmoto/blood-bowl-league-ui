@@ -1,4 +1,8 @@
+interface Matchup {
+    homeTeamName: string;
+    guestTeamName: string;
+}
+
 export interface GameDay {
-    HomeTeamName: string;
-    GuestTeamName: string;
+    matchups: Matchup[];
 }

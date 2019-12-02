@@ -1,19 +1,20 @@
-import React from 'react';
+import React, {FunctionComponent} from 'react';
 import {connect} from "react-redux";
 import GameDayListPanel from "./GameDayListPanel";
 import {LoadingIndicator} from "../UtilComponents/LoadingIndicator";
+import {GameDay} from "../Models/GameDay";
 
-function UpcomingGamePage(props) {
-    var { upcomingGames, loading } = props;
+const UpcomingGamePage:FunctionComponent<{ upcomingGames: GameDay[], loading: boolean }>
+    = ({ upcomingGames = [], loading = true }) => {
 
     if (loading || !upcomingGames) return <LoadingIndicator />;
 
     return (
         <GameDayListPanel gameDays = {upcomingGames}/>
     );
-}
+};
 
-function mapStateToProps(state) {
+function mapStateToProps(state: any) {
     const { upcomingGames, loading} = state.upcomingGameState;
     return {
         upcomingGames,

@@ -1,9 +1,12 @@
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
-import React from "react";
+import {GameDay} from "../Models/GameDay";
+import React, {FunctionComponent} from "react";
 
-export function GameDayItem(props) {
-    const { value, index, gameDay } = props;
+const GameDayItem:FunctionComponent<{ gameDay: GameDay, index: number, value: number }>
+        = ({ gameDay = null, index = 0, value = 0 }) => {
+
+    if (!gameDay) return null;
 
     const matchups = gameDay.matchups.map((m, index) => <Box pt={4} pl={4} key={index}>{m.homeTeamName} vs {m.guestTeamName}</Box>);
 
@@ -12,4 +15,6 @@ export function GameDayItem(props) {
             {matchups}
         </Typography>
     );
-}
+};
+
+export default GameDayItem;
