@@ -9,7 +9,8 @@ import {toAction} from "../helpers";
 
 function* fetchUpcomingGamesDays(action: UpcomingGamesRequestedAction) {
     const upcomingGames = yield call(fetchUpcomingGames, action.payload.seasonId);
-    yield put(toAction(new UpcomingGamesSucceededAction(upcomingGames)));
+    const newAction = new UpcomingGamesSucceededAction(upcomingGames);
+    yield put(toAction(newAction));
 }
 
 function* fetchUpcomingGamesSaga() {
