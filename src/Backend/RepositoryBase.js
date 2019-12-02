@@ -6,8 +6,10 @@ export async function fetchJson(baseUrl, path) {
         if (response.status !== 200) {
             window.store.dispatch({
                 type: 'BACKEND_GET_CALL_FAILED',
-                result: {
-                    type: 'notFound'
+                payload: {
+                    result: {
+                        type: 'notFound'
+                    }
                 }
             })
         }
@@ -17,9 +19,11 @@ export async function fetchJson(baseUrl, path) {
     catch (e) {
         window.store.dispatch({
             type: 'BACKEND_GET_CALL_FAILED',
-            result: {
-                type: 'unknown',
-                message: e.message,
+            payload: {
+                result: {
+                    type: 'unknown',
+                    message: e.message,
+                }
             }
         })
     }
@@ -43,9 +47,11 @@ export async function sendJson(baseUrl, path, body) {
             const problem = responseContent['problem-details'];
             window.store.dispatch({
                 type: 'BACKEND_GET_CALL_FAILED',
-                result: {
-                    type: 'validationError',
-                    keys: problem,
+                payload: {
+                    result: {
+                        type: 'validationError',
+                        keys: problem,
+                    }
                 }
             })
 
@@ -58,9 +64,11 @@ export async function sendJson(baseUrl, path, body) {
     catch (e) {
         window.store.dispatch({
             type: 'BACKEND_POST_CALL_FAILED',
-            result: {
-                type: 'unknown',
-                message: e.message,
+            payload: {
+                result: {
+                    type: 'unknown',
+                    message: e.message,
+                }
             }
         })
     }
