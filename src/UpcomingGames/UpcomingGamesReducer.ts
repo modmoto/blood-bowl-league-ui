@@ -33,7 +33,7 @@ const initialState: UpcomingGameState = {
 };
 
 export const UPCOMING_GAMES_REQUESTED = 'UPCOMING_GAMES_REQUESTED';
-export const UPCOMING_GAMES_SUCEEDED = 'UPCOMING_GAMES_SUCEEDED';
+const UPCOMING_GAMES_SUCEEDED = 'UPCOMING_GAMES_SUCEEDED';
 
 export class UpcomingGamesSucceededAction {
     readonly payload: {
@@ -61,4 +61,4 @@ export class UpcomingGamesRequestedAction {
     }
 }
 
-export type UpcomingGameActionTypes = UpcomingGamesSucceededAction | UpcomingGamesRequestedAction
+type UpcomingGameActionTypes = UpcomingGamesSucceededAction | UpcomingGamesRequestedAction

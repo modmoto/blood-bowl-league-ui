@@ -1,3 +1,6 @@
+class GlobalState {
+}
+
 export default function globalErrorStateReducer(state = {
     errorOccured: false,
     message: null,
@@ -5,9 +8,9 @@ export default function globalErrorStateReducer(state = {
         type: 'Unknown Error',
         message: 'undefined'
     }
-}, action) {
+}, action: any) {
 
-    function actionObject(action) {
+    function actionObject(action: any): GlobalState {
         return {
             ...state,
             errorOccured: true,
