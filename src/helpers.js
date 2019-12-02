@@ -8,3 +8,7 @@ export function getBrowserLanguage() {
     }
     return null
 }
+
+export function toAction(action) {
+    return { type: action.type, payload: action.payload }
+}

@@ -5,11 +5,11 @@ import {
     UpcomingGamesRequestedAction,
     UpcomingGamesSucceededAction
 } from "./UpcomingGamesReducer";
+import {toAction} from "../helpers";
 
 function* fetchUpcomingGamesDays(action: UpcomingGamesRequestedAction) {
     const upcomingGames = yield call(fetchUpcomingGames, action.payload.seasonId);
-    const newAction = new UpcomingGamesSucceededAction(upcomingGames);
-    yield put({type: newAction.type, payload: newAction.payload});
+    yield put(toAction(new UpcomingGamesSucceededAction(upcomingGames)));
 }
 
 function* fetchUpcomingGamesSaga() {

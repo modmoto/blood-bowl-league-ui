@@ -13,6 +13,7 @@ import i18n from "i18next";
 import TeamManagementPage from "./TeamManagementPage/TeamManagementPage";
 import GeneralErrorDialog from "./GeneralErrorDialog";
 import {UpcomingGamesRequestedAction} from "./UpcomingGames/UpcomingGamesReducer";
+import {toAction} from "./helpers";
 
 function AppContent() {
     const dispatch = useDispatch();
@@ -24,7 +25,7 @@ function AppContent() {
 
     useEffect(() => {
         const action = new UpcomingGamesRequestedAction('7a097eae-be35-4b4d-a23d-98a6b57534f3');
-        dispatch({type: action.type, payload: action.payload})
+        dispatch(toAction(action))
     }, [dispatch]);
 
     useEffect(() => {
