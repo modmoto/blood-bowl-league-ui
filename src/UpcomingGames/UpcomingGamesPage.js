@@ -6,7 +6,7 @@ import {LoadingIndicator} from "../UtilComponents/LoadingIndicator";
 function UpcomingGamePage(props) {
     var { upcomingGames, loading } = props;
 
-    if (loading || !upcomingGames) return <LoadingIndicator />
+    if (loading || !upcomingGames) return <LoadingIndicator />;
 
     return (
         <GameDayListPanel gameDays = {upcomingGames}/>
@@ -14,7 +14,7 @@ function UpcomingGamePage(props) {
 }
 
 function mapStateToProps(state) {
-    const { upcomingGames, loading} = state.upcomingGameState
+    const { upcomingGames, loading} = state.upcomingGameState;
     return {
         upcomingGames,
         loading
