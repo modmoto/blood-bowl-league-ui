@@ -23,8 +23,8 @@ function AppContent() {
     }, [dispatch]);
 
     useEffect(() => {
-        const upcomingGamesRequestedAction = new UpcomingGamesRequestedAction('7a097eae-be35-4b4d-a23d-98a6b57534f3');
-        dispatch({type: upcomingGamesRequestedAction.type, payload: upcomingGamesRequestedAction.payload})
+        const action = new UpcomingGamesRequestedAction('7a097eae-be35-4b4d-a23d-98a6b57534f3');
+        dispatch({type: action.type, payload: action.payload})
     }, [dispatch]);
 
     useEffect(() => {

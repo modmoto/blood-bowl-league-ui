@@ -8,8 +8,8 @@ import {
 
 function* fetchUpcomingGamesDays(action: UpcomingGamesRequestedAction) {
     const upcomingGames = yield call(fetchUpcomingGames, action.payload.seasonId);
-    const upcomingGamesSucceededAction = new UpcomingGamesSucceededAction(upcomingGames);
-    yield put({type: upcomingGamesSucceededAction.type, payload: upcomingGamesSucceededAction.payload});
+    const newAction = new UpcomingGamesSucceededAction(upcomingGames);
+    yield put({type: newAction.type, payload: newAction.payload});
 }
 
 function* fetchUpcomingGamesSaga() {
