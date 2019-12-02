@@ -5,8 +5,8 @@ import {ThemeProvider} from "@material-ui/styles";
 import {Provider} from 'react-redux'
 import {createStore, applyMiddleware, combineReducers} from 'redux'
 import createSagaMiddleware from 'redux-saga'
-import fetchUpcomingGamesSaga from "./UpcominGames/UpcomingGamesSaga";
-import upcomingGamesReducer from "./UpcominGames/UpcomingGamesReducer";
+import fetchUpcomingGamesSaga from "./UpcomingGames/UpcomingGamesSaga";
+import upcomingGamesReducer from "./UpcomingGames/UpcomingGamesReducer";
 import AppContent from "./AppContent";
 import teamManagementPageReducer from "./TeamManagementPage/TeamManagementPageReducer";
 import {buyPlayerSaga, fetchRacesSaga, fetchTeamSaga} from "./TeamManagementPage/TeamManagementPageSaga";

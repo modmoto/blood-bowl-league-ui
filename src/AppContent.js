@@ -3,7 +3,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import { Switch, Route, Link } from "react-router-dom";
-import UpcomingGamePage from "./UpcominGames/UpcomingGamesPage";
+import UpcomingGamePage from "./UpcomingGames/UpcomingGamesPage";
 import Home from "./Home/HomePage";
 import {useTranslation} from 'react-i18next';
 
