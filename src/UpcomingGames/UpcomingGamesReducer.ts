@@ -33,7 +33,7 @@ const initialState: UpcomingGameState = {
 };
 
 export const UPCOMING_GAMES_REQUESTED = 'UPCOMING_GAMES_REQUESTED';
-const UPCOMING_GAMES_SUCEEDED = 'UPCOMING_GAMES_SUCEEDED';
+export const UPCOMING_GAMES_SUCEEDED = 'UPCOMING_GAMES_SUCEEDED';
 
 export class UpcomingGamesSucceededAction {
     readonly payload: {

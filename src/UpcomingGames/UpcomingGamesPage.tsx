@@ -4,6 +4,7 @@ import GameDayListPanel from "./GameDayListPanel";
 import {LoadingIndicator} from "../UtilComponents/LoadingIndicator";
 import {GameDay} from "../Models/GameDay";
 import {CombinedStates} from "../CombinedStates";
+import {UpcomingGameState} from "./UpcomingGamesReducer";
 
 const UpcomingGamePage:FunctionComponent<{ upcomingGames: GameDay[], loading: boolean }>
     = ({ upcomingGames = [], loading = true }) => {
@@ -15,7 +16,7 @@ const UpcomingGamePage:FunctionComponent<{ upcomingGames: GameDay[], loading: bo
     );
 };
 
-function mapStateToProps(state: CombinedStates) {
+function mapStateToProps(state: CombinedStates): UpcomingGameState {
     const { upcomingGames, loading} = state.upcomingGameState;
     return {
         upcomingGames,

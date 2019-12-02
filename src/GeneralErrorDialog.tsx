@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FunctionComponent} from 'react';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -7,15 +7,19 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import {useTranslation} from "react-i18next";
 import {connect, useDispatch} from "react-redux";
+import {toAction} from "./helpers";
+import {GlobalErrorDismissedAction, GlobalState, ResultObject, ValidationDetails} from "./GlobalErrorStateReducer";
+import {CombinedStates} from "./CombinedStates";
 
-function GeneralErrorDialog(props) {
+const GeneralErrorDialog:FunctionComponent<{ result: ResultObject, errorOccured: boolean }>
+    = ({ result = null, errorOccured = false }) => {
     const dispatch = useDispatch();
     const { t } = useTranslation();
     const [errorDialogIsOpen, setErrorDialogIsOpen] = React.useState(false);
-    const { result, errorOccured } = props;
+    if (!result) return null;
 
     const handleCloseErrorDialog = () => {
-        dispatch({type: 'GLOBAL_ERROR_DISMISSED'});
+        dispatch(toAction(new GlobalErrorDismissedAction()));
         setErrorDialogIsOpen(false);
     };
 
@@ -23,7 +27,7 @@ function GeneralErrorDialog(props) {
         setErrorDialogIsOpen(true);
     }
 
-    const subtitle = t("globalErrorDialog.Text_" + result.type)
+    const subtitle = t("globalErrorDialog.Text_" + result.type);
 
     const unknownMessage = result.type === 'unknown' ? <UnknownMessage subtitle={subtitle} message={result.message}/> : null;
     const validationErrors = result.type === 'validationError' ? <ValidationErrors keys = {result.keys}/> : null;
@@ -51,16 +55,17 @@ function GeneralErrorDialog(props) {
     );
 }
 
-function mapStateToProps(state) {
-    const { errorOccured, result } = state.globalState;
+function mapStateToProps(state: CombinedStates): GlobalState {
+    const { errorOccured, result, message } = state.globalState;
     return {
         errorOccured,
-        result
+        result,
+        message
     }
 }
 
-function UnknownMessage(props) {
-    const {subtitle, message} = props;
+const UnknownMessage:FunctionComponent<{ subtitle: string, message: string }>
+    = ({ subtitle = '', message = '' }) => {
     return(
         <>
             {subtitle}
@@ -68,16 +73,16 @@ function UnknownMessage(props) {
             {message}
         </>
     )
-}
+};
 
-function ValidationErrors(props) {
-    const { keys } = props;
+const ValidationErrors:FunctionComponent<{ keys: ValidationDetails[] }>
+    = ({ keys = []}) => {
     const items = keys.map(k => <><br/>{k.detail}</>);
     return(
         <>
             {items}
         </>
     )
-}
+};
 
 export default connect(mapStateToProps)(GeneralErrorDialog);
