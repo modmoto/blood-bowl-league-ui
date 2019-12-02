@@ -51,7 +51,7 @@ export interface ReduxActionsBase {
     readonly payload: any;
 }
 
-export class ValidationDetails {
+export class ValidationDetail {
     constructor(detail: string, type: string) {
         this.detail = detail;
         this.type = type;
@@ -62,18 +62,18 @@ export class ValidationDetails {
 }
 
 export class ResultObject {
-    constructor(message: string, type: string, keys: ValidationDetails[]) {
+    constructor(message: string, type: string, keys: ValidationDetail[]) {
         this.type = type;
         this.message = message;
         this.keys = keys;
     }
 
-    readonly keys: ValidationDetails[];
+    readonly keys: ValidationDetail[];
     readonly message: string;
     readonly type: string;
 }
 
-class ErrorResponse {
+export class ErrorResponse {
     constructor(message: string, result: ResultObject) {
         this.result = result;
         this.message = message;
@@ -81,6 +81,24 @@ class ErrorResponse {
 
     readonly result: ResultObject;
     readonly message: string;
+}
+
+export class NotFoundResponse extends ErrorResponse {
+    constructor() {
+        super('notFound', new ResultObject('notFound', 'notFound', []));
+    }
+}
+
+export class UnknownErrorResponse extends ErrorResponse {
+    constructor(message: string) {
+        super(message, new ResultObject('unknown', 'unknown', []));
+    }
+}
+
+export class ValidationErrorResponse extends ErrorResponse {
+    constructor(keys: ValidationDetail[]) {
+        super('validationError', new ResultObject('validationError', 'validationError', keys));
+    }
 }
 
 abstract class ErrorActionBase implements ReduxActionsBase{

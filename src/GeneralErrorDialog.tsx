@@ -8,7 +8,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import {useTranslation} from "react-i18next";
 import {connect, useDispatch} from "react-redux";
 import {toAction} from "./helpers";
-import {GlobalErrorDismissedAction, GlobalState, ResultObject, ValidationDetails} from "./GlobalErrorStateReducer";
+import {GlobalErrorDismissedAction, GlobalState, ResultObject, ValidationDetail} from "./GlobalErrorStateReducer";
 import {CombinedStates} from "./CombinedStates";
 
 const GeneralErrorDialog:FunctionComponent<{ result: ResultObject, errorOccured: boolean }>
@@ -75,7 +75,7 @@ const UnknownMessage:FunctionComponent<{ subtitle: string, message: string }>
     )
 };
 
-const ValidationErrors:FunctionComponent<{ keys: ValidationDetails[] }>
+const ValidationErrors:FunctionComponent<{ keys: ValidationDetail[] }>
     = ({ keys = []}) => {
     const items = keys.map(k => <><br/>{k.detail}</>);
     return(
