@@ -22,7 +22,7 @@ export default function upcomingGamesReducer(
     }
 }
 
-interface UpcomingGameState {
+export interface UpcomingGameState {
     upcomingGames: GameDay[],
     loading: boolean
 }
