@@ -8,7 +8,7 @@ export default function upcomingGamesReducer(
         case UPCOMING_GAMES_SUCEEDED:
             return {
                 ...state,
-                upcomingGames: action.upcomingGames,
+                upcomingGames: action.payload.upcomingGames,
                 loading: false
             };
 
@@ -35,15 +35,30 @@ const initialState: UpcomingGameState = {
 export const UPCOMING_GAMES_REQUESTED = 'UPCOMING_GAMES_REQUESTED';
 export const UPCOMING_GAMES_SUCEEDED = 'UPCOMING_GAMES_SUCEEDED';
 
-interface UpcomingGameSessionSuccededAction {
-    type: typeof UPCOMING_GAMES_SUCEEDED
-    upcomingGames: GameDay[]
-    loading: boolean
+export class UpcomingGamesSucceededAction {
+    constructor(upcomingGames: GameDay[]) {
+        this.payload = {
+            upcomingGames: upcomingGames
+        }
+    }
+    payload: {
+        upcomingGames: GameDay[];
+    };
+
+    type: typeof UPCOMING_GAMES_SUCEEDED = UPCOMING_GAMES_SUCEEDED;
 }
 
-interface UpcomingGameSessionRequestedAction {
-    type: typeof UPCOMING_GAMES_REQUESTED
-    loading: boolean
+export class UpcomingGamesRequestedAction {
+    constructor(seasonId: string) {
+        this.payload = {
+            seasonId: seasonId
+        }
+    }
+
+    payload: {
+        seasonId: string;
+    };
+    type: typeof UPCOMING_GAMES_REQUESTED = UPCOMING_GAMES_REQUESTED;
 }
 
-export type UpcomingGameActionTypes = UpcomingGameSessionSuccededAction | UpcomingGameSessionRequestedAction
+export type UpcomingGameActionTypes = UpcomingGamesSucceededAction | UpcomingGamesRequestedAction

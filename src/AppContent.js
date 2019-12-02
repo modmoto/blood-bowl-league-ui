@@ -12,6 +12,7 @@ import {useDispatch} from 'react-redux'
 import i18n from "i18next";
 import TeamManagementPage from "./TeamManagementPage/TeamManagementPage";
 import GeneralErrorDialog from "./GeneralErrorDialog";
+import {UpcomingGamesRequestedAction} from "./UpcomingGames/UpcomingGamesReducer";
 
 function AppContent() {
     const dispatch = useDispatch();
@@ -22,7 +23,8 @@ function AppContent() {
     }, [dispatch]);
 
     useEffect(() => {
-        dispatch({type: 'UPCOMING_GAMES_REQUESTED', payload: { seasonId: '7a097eae-be35-4b4d-a23d-98a6b57534f3' }})
+        const upcomingGamesRequestedAction = new UpcomingGamesRequestedAction('7a097eae-be35-4b4d-a23d-98a6b57534f3');
+        dispatch({type: upcomingGamesRequestedAction.type, payload: upcomingGamesRequestedAction.payload})
     }, [dispatch]);
 
     useEffect(() => {
