@@ -14,13 +14,15 @@ export class Team {
     teamId: string;
     version: number;
     teamChest: TeamChest;
+    teamName: string;
 
-    constructor(teamId: string, version: number, raceId: string, allowedPlayers: AllowedPlayer[], teamChest: TeamChest) {
+    constructor(teamId: string, version: number, raceId: string, allowedPlayers: AllowedPlayer[], teamChest: TeamChest, teamName: string) {
         this.teamId = teamId;
         this.version = version;
         this.raceId = raceId;
         this.allowedPlayers = allowedPlayers;
         this.teamChest = teamChest;
+        this.teamName = teamName;
     }
 }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FunctionComponent} from 'react';
 import {connect} from "react-redux";
 
 import {Box, Typography} from "@material-ui/core";
@@ -6,10 +6,13 @@ import {LoadingIndicator} from "../UtilComponents/LoadingIndicator";
 import {useTranslation} from 'react-i18next';
 import BuyPlayerPanel from "./BuyPlayerPanel";
 import PlayerListForTeam from "./PlayerListForTeam";
+import {CombinedStates} from "../CombinedStates";
+import {FullTeam} from "../Models/Teams/FullTeam";
 
-function TeamManagementPage(props) {
-
-    const { team, loading } = props;
+const TeamManagementPage:FunctionComponent<{
+    loading: boolean
+    team: FullTeam
+}> = ({ loading, team }) => {
     const { t } = useTranslation();
 
     if (loading || !team) return <LoadingIndicator />;
@@ -28,9 +31,9 @@ function TeamManagementPage(props) {
             </Box>
         </Box>
     )
-}
+};
 
-function mapStateToProps(state) {
+function mapStateToProps(state: CombinedStates) {
     const { team, loading } = state.teamState;
     return {
         team,
