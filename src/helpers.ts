@@ -1,4 +1,7 @@
+import {ReduxActionsBase} from "./ReduxActionsBase";
+
 export function getBrowserLanguage() {
+    // @ts-ignore
     const language = window.navigator.userLanguage || window.navigator.language;
     if (!language) return null
 
@@ -9,6 +12,6 @@ export function getBrowserLanguage() {
     return null
 }
 
-export function toAction(action) {
+export function toAction(action: ReduxActionsBase) {
     return { type: action.type, payload: action.payload }
 }

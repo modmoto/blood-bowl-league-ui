@@ -1,3 +1,5 @@
+import {ReduxActionsBase} from "./ReduxActionsBase";
+
 export default function globalErrorStateReducer(state = initialState, action: GlobalStateActionTypes): GlobalState {
 
     function actionObject(action: GlobalStateActionTypes): GlobalState {
@@ -45,11 +47,6 @@ const initialState: GlobalState = {
 export const BACKEND_GET_CALL_FAILED = 'BACKEND_GET_CALL_FAILED';
 export const BACKEND_POST_CALL_FAILED = 'BACKEND_POST_CALL_FAILED';
 export const GLOBAL_ERROR_DISMISSED = 'GLOBAL_ERROR_DISMISSED';
-
-export interface ReduxActionsBase {
-    readonly type: string;
-    readonly payload: any;
-}
 
 export class ValidationDetail {
     constructor(detail: string, type: string) {

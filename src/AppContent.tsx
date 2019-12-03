@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react';
+import React, {FunctionComponent, useEffect} from 'react';
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
@@ -32,7 +32,7 @@ function AppContent() {
         dispatch({type: 'ALL_RACES_REQUESTED'})
     }, [dispatch]);
 
-    const changeLanguage = (lng) => {
+    const changeLanguage = (lng: string) => {
         i18n.changeLanguage(lng);
     };
 
@@ -68,8 +68,9 @@ function AppContent() {
     )
 }
 
-function ToolbarButton(props) {
-    return <Button size={'large'} component={Link} to={props.to}>{props.children}</Button>
-}
+const ToolbarButton:FunctionComponent<{ to: string, children: any }>
+    = ({ to = '', children = null }) => {
+    return <Button size={'large'} component={Link} to={to}>{children}</Button>
+};
 
 export default AppContent;

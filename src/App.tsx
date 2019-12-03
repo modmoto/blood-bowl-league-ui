@@ -41,6 +41,7 @@ const store = createStore(
     applyMiddleware(sagaMiddleware)
 );
 
+// @ts-ignore
 window.store = store;
 
 sagaMiddleware.run(fetchUpcomingGamesSaga);
