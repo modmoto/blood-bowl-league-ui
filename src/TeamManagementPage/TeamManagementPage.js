@@ -15,6 +15,7 @@ function TeamManagementPage(props) {
     if (loading || !team) return <LoadingIndicator />;
 
     const fullTeam = team.team;
+    const teamMoney = fullTeam.teamChest.value;
 
     return (
         <Box mt={3}>
@@ -22,6 +23,9 @@ function TeamManagementPage(props) {
 
             <PlayerListForTeam playerList={team.playerList}/>
             <BuyPlayerPanel />
+            <Box pt={3}>
+                <Typography variant='h5'>{teamMoney} G</Typography>
+            </Box>
         </Box>
     )
 }

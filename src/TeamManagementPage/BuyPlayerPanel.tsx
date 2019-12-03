@@ -1,6 +1,6 @@
 import Button from "@material-ui/core/Button";
 import React, {FunctionComponent, useState} from "react";
-import {Select, Typography} from "@material-ui/core";
+import {Select} from "@material-ui/core";
 import MenuItem from "@material-ui/core/MenuItem";
 import {useTranslation} from "react-i18next";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -21,7 +21,6 @@ const BuyPlayerPanel:FunctionComponent<{
 
     const fullTeam = team.team;
     const allowedPlayers = fullTeam.allowedPlayers;
-    const teamMoney = fullTeam.teamChest.value;
 
     const onBuyPlayerClick = (type: string) => {
         const raceOfPlayer = races.filter(r => r.raceConfigId === fullTeam.raceId)[0];
@@ -61,15 +60,12 @@ const BuyPlayerPanel:FunctionComponent<{
             <Box pt={3}>
                 <Button onClick={() => onBuyPlayerClick(selectedPlayerType)}>{t('teamPage.BuyPlayerButton')}</Button>
             </Box>
-            <Box pt={3}>
-                <Typography variant='h5'>{teamMoney} G</Typography>
-            </Box>
         </FormControl>
     )
 };
 
 function mapStateToProps(state: CombinedStates) {
-    const { team, races} = state.teamState;
+    const { team, races } = state.teamState;
     return {
         team,
         races
