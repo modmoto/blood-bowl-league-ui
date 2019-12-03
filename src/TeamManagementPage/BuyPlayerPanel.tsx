@@ -10,11 +10,11 @@ import {Player} from "../Models/Players/Player";
 
 const BuyPlayerPanel:FunctionComponent<{
     allowedPlayers: Player[]
-    value: any
-    onBuyButtonClick: any
-    onPlayerTypeChange: any
-    teamMoney: any
-    }> = ({ allowedPlayers, value, onBuyButtonClick, onPlayerTypeChange, teamMoney }) => {
+    selectedPlayerType: string
+    onBuyButtonClick: (event: React.MouseEvent<{}>) => void
+    onPlayerTypeChange: (event: any) => void
+    teamMoney: number
+    }> = ({ allowedPlayers, selectedPlayerType, onBuyButtonClick, onPlayerTypeChange, teamMoney }) => {
     const { t } = useTranslation();
 
     const playerSelects = allowedPlayers.map(p =>
@@ -25,7 +25,7 @@ const BuyPlayerPanel:FunctionComponent<{
             <InputLabel id="select-player-type-label">{t('teamPage.BuyPlayerTypeLabel')}</InputLabel>
             <Select
                 labelId="select-player-type-label"
-                value={value}
+                value={selectedPlayerType}
                 style={{minWidth: 190}}
                 onChange={(e) => {
                     e.persist();

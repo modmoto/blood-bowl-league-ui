@@ -42,7 +42,7 @@ function TeamManagementPage(props) {
             <Typography variant='h4'>{fullTeam.teamName} ({t("races." + fullTeam.raceId)})</Typography>
 
             <PlayerListForTeam playerList={team.playerList}/>
-            <BuyPlayerPanel value={selectedPlayerType}
+            <BuyPlayerPanel selectedPlayerType={selectedPlayerType}
                             onPlayerTypeChange={setSelectedPlayer}
                             allowedPlayers={fullTeam.allowedPlayers}
                             teamVersion={team.teamVersion}
