@@ -53,7 +53,7 @@ const GeneralErrorDialog:FunctionComponent<{ result: ResultObject, errorOccured:
             </DialogActions>
         </Dialog>
     );
-}
+};
 
 function mapStateToProps(state: CombinedStates): GlobalState {
     const { errorOccured, result, message } = state.globalState;
