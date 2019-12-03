@@ -21,8 +21,7 @@ function TeamManagementPage(props) {
             <Typography variant='h4'>{fullTeam.teamName} ({t("races." + fullTeam.raceId)})</Typography>
 
             <PlayerListForTeam playerList={team.playerList}/>
-            <BuyPlayerPanel allowedPlayers={fullTeam.allowedPlayers}
-                            teamMoney={fullTeam.teamChest.value}/>
+            <BuyPlayerPanel />
         </Box>
     )
 }

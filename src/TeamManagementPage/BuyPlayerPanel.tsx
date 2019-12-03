@@ -6,23 +6,22 @@ import {useTranslation} from "react-i18next";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Box from "@material-ui/core/Box";
-import {Player} from "../Models/Players/Player";
 import {connect, useDispatch} from "react-redux";
 import {FullTeam} from "../Models/Teams/FullTeam";
 import {Race} from "../Models/Races/Race";
 import {CombinedStates} from "../CombinedStates";
 
 const BuyPlayerPanel:FunctionComponent<{
-    allowedPlayers: Player[]
-    teamMoney: number
     races: Race[]
     team: FullTeam
-    }> = ({ allowedPlayers, teamMoney, races, team }) => {
+    }> = ({ races, team }) => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
     const [selectedPlayerType, setSelectedPlayer] = useState('');
 
     const fullTeam = team.team;
+    const allowedPlayers = fullTeam.allowedPlayers;
+    const teamMoney = fullTeam.teamChest.value;
 
     const onBuyPlayerClick = (type: string) => {
         const raceOfPlayer = races.filter(r => r.raceConfigId === fullTeam.raceId)[0];

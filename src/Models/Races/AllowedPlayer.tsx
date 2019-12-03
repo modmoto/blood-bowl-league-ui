@@ -5,7 +5,7 @@ class Skill {
     }
 }
 
-export class AllowerPlayer {
+export class AllowedPlayer {
     startingSkills: Skill[];
     playerTypeId: string;
 
