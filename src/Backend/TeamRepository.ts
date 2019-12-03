@@ -1,5 +1,6 @@
 import {fetchJson, sendJson} from "./RepositoryBase";
 import {FullTeam} from "../Models/Teams/FullTeam";
+import {Race} from "../Models/Races/Race";
 
 const ReadURl = 'https://teams-readhost.herokuapp.com/api';
 const WriteUrl = 'https://teams-host.herokuapp.com/api';
@@ -10,7 +11,7 @@ export async function fetchTeamCall(teamId: string): Promise<FullTeam> {
     return await fetchJson(ReadURl, "/Teams/" + teamId + "/full")
 }
 
-export async function fetchRacesCall() {
+export async function fetchRacesCall(): Promise<Race[]> {
     return await fetchJson(ReadURl, "/Races")
 }
 

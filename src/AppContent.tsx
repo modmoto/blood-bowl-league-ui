@@ -12,8 +12,8 @@ import {useDispatch} from 'react-redux'
 import i18n from "i18next";
 import TeamManagementPage from "./TeamManagementPage/TeamManagementPage";
 import GeneralErrorDialog from "./GeneralErrorDialog";
-import {UpcomingGamesRequestedAction} from "./UpcomingGames/UpcomingGamesReducer";
 import {toAction} from "./helpers";
+import {UpcomingGamesRequestedAction} from "./UpcomingGames/UpcomingGameActions";
 
 function AppContent() {
     const dispatch = useDispatch();

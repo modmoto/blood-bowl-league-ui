@@ -1,11 +1,11 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
 import {fetchUpcomingGames} from "../Backend/SeasonRepository";
+import {toAction} from "../helpers";
 import {
     UPCOMING_GAMES_REQUESTED,
     UpcomingGamesRequestedAction,
     UpcomingGamesSucceededAction
-} from "./UpcomingGamesReducer";
-import {toAction} from "../helpers";
+} from "./UpcomingGameActions";
 
 function* fetchUpcomingGamesDays(action: UpcomingGamesRequestedAction) {
     const upcomingGames = yield call(fetchUpcomingGames, action.payload.seasonId);
