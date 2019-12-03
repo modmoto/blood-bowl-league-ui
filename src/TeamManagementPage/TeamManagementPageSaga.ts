@@ -28,6 +28,7 @@ function* buyPlayerFunc(action: BuyPlayerRequestedAction) {
 
     if (!player) return;
     playerToBuy.playerId = player.playerId;
+    playerToBuy.playerPositionNumber = player.playerPositionNumber;
 
     const newAction = new BuyPlayerSucceededAction(playerToBuy);
     yield put(toAction(newAction));

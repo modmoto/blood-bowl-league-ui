@@ -33,12 +33,10 @@ const BuyPlayerPanel:FunctionComponent<{
             type,
             fullTeam.teamId,
             new Player(
-                team.playerList.length + 1,
                 playerConfig,
                 playerConfig.startingSkills.map(s => s.skillId),
                 0,
-                type,
-                "")
+                type)
         );
         dispatch(toAction(newAction));
     };
