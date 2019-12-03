@@ -17,7 +17,7 @@ export default function teamManagementPageReducer(
         case FETCH_TEAM_SUCEEDED:
             return {
                 ...state,
-                team: action.team,
+                team: action.payload.team,
                 loading: false
             };
         case FETCH_TEAM_REQUESTED:
@@ -34,7 +34,7 @@ export default function teamManagementPageReducer(
         case ALL_RACES_SUCEEDED:
             return {
                 ...state,
-                races: action.races,
+                races: action.payload.races,
                 loading: false
             };
 
@@ -44,7 +44,7 @@ export default function teamManagementPageReducer(
                 buyingPlayer: true
             };
         case BUY_PLAYER_SUCEEDED:
-            const player = action.playerToBuy;
+            const player = action.payload.playerToBuy;
             const team = state.team;
             team.playerList.push(player);
 
@@ -52,7 +52,7 @@ export default function teamManagementPageReducer(
                 ...state,
                 team: {
                     ...team,
-                    teamVersion: (action.teamVersion + 1),
+                    teamVersion: (action.payload.teamVersion + 1),
                     playerList: team.playerList
                 },
                 buyingPlayer: false
