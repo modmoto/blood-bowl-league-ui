@@ -27,11 +27,13 @@ export class Team {
 }
 
 export class FullTeam {
-    constructor(team: Team, playerList: Player[]) {
-        this.playerList = playerList;
-        this.team = team;
-    }
-
     playerList: Player[];
     team: Team;
+    teamVersion: number;
+
+    constructor(playerList: Player[], team: Team, teamVersion: number) {
+        this.playerList = playerList;
+        this.team = team;
+        this.teamVersion = teamVersion;
+    }
 }
