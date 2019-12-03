@@ -1,10 +1,10 @@
-import {AllowedPlayer} from "./AllowedPlayer";
+import {PlayerConfig} from "../Players/PlayerConfig";
 
 export class Race {
-    constructor(raceConfigId: string, allowedPlayers: AllowedPlayer[]) {
+    constructor(raceConfigId: string, allowedPlayers: PlayerConfig[]) {
         this.raceConfigId = raceConfigId;
         this.allowedPlayers = allowedPlayers;
     }
     raceConfigId: string;
-    allowedPlayers: AllowedPlayer[];
+    allowedPlayers: PlayerConfig[];
 }

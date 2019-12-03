@@ -10,6 +10,9 @@ import {connect, useDispatch} from "react-redux";
 import {FullTeam} from "../Models/Teams/FullTeam";
 import {Race} from "../Models/Races/Race";
 import {CombinedStates} from "../CombinedStates";
+import {BuyPlayerRequestedAction} from "./TeamManagementActions";
+import {Player} from "../Models/Players/Player";
+import {toAction} from "../helpers";
 
 const BuyPlayerPanel:FunctionComponent<{
     races: Race[]
@@ -25,20 +28,19 @@ const BuyPlayerPanel:FunctionComponent<{
     const onBuyPlayerClick = (type: string) => {
         const raceOfPlayer = races.filter(r => r.raceConfigId === fullTeam.raceId)[0];
         const playerConfig = raceOfPlayer.allowedPlayers.filter(p => p.playerTypeId === type)[0];
-        dispatch({
-            type: 'BUY_PLAYER_REQUESTED',
-            payload: {
-                teamId: fullTeam.teamId,
-                playerTypeId: type,
-                teamVersion: fullTeam.version},
-            playerToBuy: {
-                playerTypeId: type,
-                playerPositionNumber: team.playerList.length + 1,
-                starPlayerPoints: 0,
-                skills: playerConfig.startingSkills.map(s => s.skillId),
-                playerConfig: playerConfig
-            }
-        })
+        var newAction = new BuyPlayerRequestedAction(
+            fullTeam.version,
+            type,
+            fullTeam.teamId,
+            new Player(
+                team.playerList.length + 1,
+                playerConfig,
+                playerConfig.startingSkills.map(s => s.skillId),
+                0,
+                type,
+                "")
+        );
+        dispatch(toAction(newAction));
     };
 
     const playerSelects = allowedPlayers.map(p =>

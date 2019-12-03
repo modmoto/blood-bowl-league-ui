@@ -27,7 +27,7 @@ function* buyPlayerFunc(action: BuyPlayerRequestedAction) {
     playerToBuy.playerId = player.playerId;
 
     // @ts-ignore
-    const newAction = new BuyPlayerSucceededAction(null, playerToBuy, action.teamVersion);
+    const newAction = new BuyPlayerSucceededAction(playerToBuy, action.teamVersion);
     yield put(toAction(newAction));
 }
 
