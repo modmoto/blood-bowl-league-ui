@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {connect, useDispatch} from "react-redux";
+import React from 'react';
+import {connect} from "react-redux";
 
 import {Box, Typography} from "@material-ui/core";
 import {LoadingIndicator} from "../UtilComponents/LoadingIndicator";
@@ -9,55 +9,29 @@ import PlayerListForTeam from "./PlayerListForTeam";
 
 function TeamManagementPage(props) {
 
-    const { team, loading, races } = props;
+    const { team, loading } = props;
     const { t } = useTranslation();
-    const dispatch = useDispatch();
-    const [selectedPlayerType, setSelectedPlayer] = useState('');
 
     if (loading || !team) return <LoadingIndicator />;
 
     const fullTeam = team.team;
-
-    const onBuyPlayerClick = (type) => {
-        const raceOfPlayer = races.filter(r => r.raceConfigId === fullTeam.raceId)[0];
-        const playerConfig = raceOfPlayer.allowedPlayers.filter(p => p.playerTypeId === type)[0];
-        dispatch({
-            type: 'BUY_PLAYER_REQUESTED',
-            payload: {
-                teamId: fullTeam.teamId,
-                playerTypeId: type,
-                teamVersion: fullTeam.version},
-            playerToBuy: {
-                playerTypeId: type,
-                playerPositionNumber: team.playerList.length + 1,
-                starPlayerPoints: 0,
-                skills: playerConfig.startingSkills.map(s => s.skillId),
-                playerConfig: playerConfig
-            }
-        })
-    };
 
     return (
         <Box mt={3}>
             <Typography variant='h4'>{fullTeam.teamName} ({t("races." + fullTeam.raceId)})</Typography>
 
             <PlayerListForTeam playerList={team.playerList}/>
-            <BuyPlayerPanel selectedPlayerType={selectedPlayerType}
-                            onPlayerTypeChange={setSelectedPlayer}
-                            allowedPlayers={fullTeam.allowedPlayers}
-                            teamVersion={team.teamVersion}
-                            teamMoney={fullTeam.teamChest.value}
-                            onBuyButtonClick={() => onBuyPlayerClick(selectedPlayerType)}/>
+            <BuyPlayerPanel allowedPlayers={fullTeam.allowedPlayers}
+                            teamMoney={fullTeam.teamChest.value}/>
         </Box>
     )
 }
 
 function mapStateToProps(state) {
-    const { team, loading, races } = state.teamState;
+    const { team, loading } = state.teamState;
     return {
         team,
-        loading,
-        races
+        loading
     }
 }
 
