@@ -1,14 +1,22 @@
 import Button from "@material-ui/core/Button";
-import React from "react";
+import React, {FunctionComponent} from "react";
 import {Select, Typography} from "@material-ui/core";
 import MenuItem from "@material-ui/core/MenuItem";
-import {withTranslation} from "react-i18next";
+import {useTranslation} from "react-i18next";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Box from "@material-ui/core/Box";
+import {Player} from "../Models/Players/Player";
 
-function BuyPlayerPanel(props) {
-    const { allowedPlayers, value, onBuyButtonClick, t, onPlayerTypeChange, teamMoney} = props;
+const BuyPlayerPanel:FunctionComponent<{
+    allowedPlayers: Player[]
+    value: any
+    onBuyButtonClick: any
+    onPlayerTypeChange: any
+    teamMoney: any
+    }> = ({ allowedPlayers, value, onBuyButtonClick, onPlayerTypeChange, teamMoney }) => {
+    const { t } = useTranslation();
+
     const playerSelects = allowedPlayers.map(p =>
         <MenuItem key={p.playerTypeId} value={p.playerTypeId}>{t(`playerTypes.${p.playerTypeId}`)}</MenuItem>);
 
@@ -33,6 +41,6 @@ function BuyPlayerPanel(props) {
             </Box>
         </FormControl>
     )
-}
+};
 
-export default withTranslation()(BuyPlayerPanel)
+export default (BuyPlayerPanel)
