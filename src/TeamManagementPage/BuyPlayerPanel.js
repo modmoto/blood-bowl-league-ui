@@ -20,7 +20,7 @@ function BuyPlayerPanel(props) {
                 value={value}
                 style={{minWidth: 190}}
                 onChange={(e) => {
-                    e.persist()
+                    e.persist();
                     onPlayerTypeChange(e.target.value)
             }}>
                 {playerSelects}
