@@ -68,7 +68,7 @@ function AppContent() {
     )
 }
 
-const ToolbarButton:FunctionComponent<{ to: string, children: any }>
+const ToolbarButton:FunctionComponent<{ to: string }>
     = ({ to = '', children = null }) => {
     return <Button size={'large'} component={Link} to={to}>{children}</Button>
 };
