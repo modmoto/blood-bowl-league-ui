@@ -1,9 +1,12 @@
 import {call, put, takeEvery} from 'redux-saga/effects'
 import {buyPlayer, fetchRacesCall, fetchTeamCall} from "../Backend/TeamRepository";
 import {
-    ALL_RACES_REQUESTED, AllRacesSucceededAction, BUY_PLAYER_REQUESTED,
+    ALL_RACES_REQUESTED,
+    BUY_PLAYER_REQUESTED,
+    FETCH_TEAM_REQUESTED,
+    AllRacesSucceededAction,
     BuyPlayerRequestedAction,
-    BuyPlayerSucceededAction, FETCH_TEAM_REQUESTED,
+    BuyPlayerSucceededAction,
     FetchTeamRequestedAction,
     FetchTeamSucceededAction
 } from "./TeamManagementActions";
@@ -26,8 +29,7 @@ function* buyPlayerFunc(action: BuyPlayerRequestedAction) {
     if (!player) return;
     playerToBuy.playerId = player.playerId;
 
-    // @ts-ignore
-    const newAction = new BuyPlayerSucceededAction(playerToBuy, action.teamVersion);
+    const newAction = new BuyPlayerSucceededAction(playerToBuy);
     yield put(toAction(newAction));
 }
 

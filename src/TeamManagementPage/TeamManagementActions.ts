@@ -57,16 +57,14 @@ export class AllRacesRequestedAction {
 export class BuyPlayerSucceededAction implements ReduxActionsBase {
     readonly type: typeof BUY_PLAYER_SUCEEDED = BUY_PLAYER_SUCEEDED;
 
-    constructor(playerToBuy: Player, teamVersion: number) {
+    constructor(playerToBuy: Player) {
         this.payload = {
             playerToBuy,
-            teamVersion
         };
     }
 
     readonly payload: {
         playerToBuy: Player;
-        teamVersion: number;
     };
 }
 

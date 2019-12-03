@@ -1,11 +1,11 @@
 import {PlayerConfig} from "./PlayerConfig";
 
 export class Player {
-    playerPositionNumber: number;
-    playerConfig: PlayerConfig;
-    skills: string[];
-    starPlayerPoints: number;
-    playerTypeId: string;
+    readonly playerPositionNumber: number;
+    readonly playerConfig: PlayerConfig;
+    readonly skills: string[];
+    readonly starPlayerPoints: number;
+    readonly playerTypeId: string;
     playerId: string;
 
 

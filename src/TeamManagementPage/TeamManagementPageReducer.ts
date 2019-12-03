@@ -49,13 +49,12 @@ export default function teamManagementPageReducer(
             const player = action.payload.playerToBuy;
             const team = state.team;
             team.playerList.push(player);
+            team.team.version = team.team.version + 1;
 
             return {
                 ...state,
                 team: {
                     ...team,
-                    teamVersion: (action.payload.teamVersion + 1),
-                    playerList: team.playerList
                 },
                 buyingPlayer: false
             };

@@ -29,11 +29,9 @@ export class Team {
 export class FullTeam {
     playerList: Player[];
     team: Team;
-    teamVersion: number;
 
-    constructor(playerList: Player[], team: Team, teamVersion: number) {
+    constructor(playerList: Player[], team: Team) {
         this.playerList = playerList;
         this.team = team;
-        this.teamVersion = teamVersion;
     }
 }
