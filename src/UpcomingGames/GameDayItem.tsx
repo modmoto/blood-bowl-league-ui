@@ -1,6 +1,6 @@
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
-import {GameDay} from "../Models/GameDay";
+import {GameDay} from "../Models/Seasons/GameDay";
 import React, {FunctionComponent} from "react";
 
 const GameDayItem:FunctionComponent<{ gameDay: GameDay, index: number, value: number }>

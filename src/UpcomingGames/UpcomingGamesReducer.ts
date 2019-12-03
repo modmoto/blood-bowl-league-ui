@@ -1,4 +1,4 @@
-import {GameDay} from "../Models/GameDay";
+import {GameDay} from "../Models/Seasons/GameDay";
 
 export default function upcomingGamesReducer(
     state = initialState,

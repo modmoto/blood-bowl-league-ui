@@ -2,7 +2,7 @@ import React, {FunctionComponent} from 'react';
 import {connect} from "react-redux";
 import GameDayListPanel from "./GameDayListPanel";
 import {LoadingIndicator} from "../UtilComponents/LoadingIndicator";
-import {GameDay} from "../Models/GameDay";
+import {GameDay} from "../Models/Seasons/GameDay";
 import {CombinedStates} from "../CombinedStates";
 import {UpcomingGameState} from "./UpcomingGamesReducer";
 

@@ -4,7 +4,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import {Box} from "@material-ui/core";
 import {useTranslation} from "react-i18next";
-import {GameDay} from "../Models/GameDay";
+import {GameDay} from "../Models/Seasons/GameDay";
 import GameDayItem from "./GameDayItem";
 
 const GameDayListPanel:FunctionComponent<{ gameDays: GameDay[] }> = ({ gameDays = [] }) => {
