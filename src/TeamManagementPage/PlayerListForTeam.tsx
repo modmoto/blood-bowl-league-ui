@@ -1,14 +1,15 @@
-import React from "react";
-import {withTranslation} from "react-i18next";
+import React, {FunctionComponent} from "react";
+import {useTranslation} from "react-i18next";
 import Table from "@material-ui/core/Table";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
 import TableBody from "@material-ui/core/TableBody";
 import PlayerRow from "./PlayerRow";
+import {Player} from "../Models/Players/Player";
 
-function PlayerListForTeam(props) {
-    const { playerList, t } = props;
+const PlayerListForTeam:FunctionComponent<{ playerList: Player[] }> = ({ playerList }) => {
+    const { t } = useTranslation();
 
     return(
         <Table>
@@ -34,10 +35,10 @@ function PlayerListForTeam(props) {
             </TableBody>
         </Table>
     )
-}
+};
 
-function StatCell(props) {
-    return <TableCell size={"small"}>{props.children}</TableCell>
-}
+const StatCell:FunctionComponent<{}> = ({ children }) => {
+    return <TableCell size={"small"}>{children}</TableCell>
+};
 
-export default withTranslation()(PlayerListForTeam)
+export default (PlayerListForTeam)

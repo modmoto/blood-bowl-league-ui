@@ -1,13 +1,14 @@
-import React from "react";
-import {withTranslation} from "react-i18next";
+import React, {FunctionComponent} from "react";
+import {useTranslation} from "react-i18next";
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
 import SkillCell from "./SkillCell";
 import StarPlayerCellContent from "./StarPlayerCellContent";
+import {Player} from "../Models/Players/Player";
 
+const PlayerRow:FunctionComponent<{player: Player, index: number}> = ({ player, index }) => {
+    const { t } = useTranslation();
 
-function PlayerRow(props) {
-    const { player, index, t} = props;
     return(
         <TableRow key={index}>
             <TableCell component="th" scope="row">{player.playerPositionNumber}</TableCell>
@@ -26,4 +27,4 @@ function PlayerRow(props) {
     )
 }
 
-export default withTranslation()(PlayerRow)
+export default (PlayerRow)
