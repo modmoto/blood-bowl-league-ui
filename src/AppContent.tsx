@@ -69,7 +69,7 @@ function AppContent() {
 }
 
 const ToolbarButton:FunctionComponent<{ to: string }>
-    = ({ to = '', children = null }) => {
+    = ({ to, children }) => {
     return <Button size={'large'} component={Link} to={to}>{children}</Button>
 };
 
