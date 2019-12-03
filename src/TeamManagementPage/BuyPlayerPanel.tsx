@@ -18,17 +18,20 @@ const BuyPlayerPanel:FunctionComponent<{
     races: Race[]
     team: FullTeam
     }> = ({ races, team }) => {
+
     const { t } = useTranslation();
     const dispatch = useDispatch();
     const [selectedPlayerType, setSelectedPlayer] = useState('');
 
     const fullTeam = team.team;
     const allowedPlayers = fullTeam.allowedPlayers;
+    const raceOfPlayer = races.filter(r => r.raceConfigId === fullTeam.raceId)[0];
+    const startingPlayer = raceOfPlayer ? raceOfPlayer.allowedPlayers[0].playerTypeId : '';
+    const realValue = (selectedPlayerType === '') ? startingPlayer : selectedPlayerType;
 
     const onBuyPlayerClick = (type: string) => {
-        const raceOfPlayer = races.filter(r => r.raceConfigId === fullTeam.raceId)[0];
         const playerConfig = raceOfPlayer.allowedPlayers.filter(p => p.playerTypeId === type)[0];
-        var newAction = new BuyPlayerRequestedAction(
+        const newAction = new BuyPlayerRequestedAction(
             fullTeam.version,
             type,
             fullTeam.teamId,
@@ -49,7 +52,7 @@ const BuyPlayerPanel:FunctionComponent<{
             <InputLabel id="select-player-type-label">{t('teamPage.BuyPlayerTypeLabel')}</InputLabel>
             <Select
                 labelId="select-player-type-label"
-                value={selectedPlayerType}
+                value={realValue}
                 style={{minWidth: 190}}
                 onChange={(e) => {
                     e.persist();
@@ -58,7 +61,7 @@ const BuyPlayerPanel:FunctionComponent<{
                 {playerSelects}
             </Select>
             <Box pt={3}>
-                <Button onClick={() => onBuyPlayerClick(selectedPlayerType)}>{t('teamPage.BuyPlayerButton')}</Button>
+                <Button onClick={() => onBuyPlayerClick(realValue)}>{t('teamPage.BuyPlayerButton')}</Button>
             </Box>
         </FormControl>
     )
