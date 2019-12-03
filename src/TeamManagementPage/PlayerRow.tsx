@@ -25,6 +25,6 @@ const PlayerRow:FunctionComponent<{player: Player, index: number}> = ({ player, 
             </TableCell>
         </TableRow>
     )
-}
+};
 
 export default (PlayerRow)
