@@ -27,7 +27,7 @@ const BuyPlayerPanel:FunctionComponent<{
     const fullTeam = team.team;
     const allowedPlayers = fullTeam.allowedPlayers;
     const raceOfPlayer = races.filter(r => r.raceConfigId === fullTeam.raceId)[0];
-    const startingPlayer = raceOfPlayer ? raceOfPlayer.allowedPlayers[0].playerTypeId : '';
+    const startingPlayer = allowedPlayers ? allowedPlayers[0].playerTypeId : '';
     const realValue = (selectedPlayerType !== '') ? selectedPlayerType : startingPlayer;
 
     const onBuyPlayerClick = (type: string) => {
