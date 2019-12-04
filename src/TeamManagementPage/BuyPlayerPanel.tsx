@@ -1,5 +1,5 @@
 import Button from "@material-ui/core/Button";
-import React, {FunctionComponent, useState} from "react";
+import React, {ChangeEvent, FunctionComponent, useState} from "react";
 import {Select} from "@material-ui/core";
 import MenuItem from "@material-ui/core/MenuItem";
 import {useTranslation} from "react-i18next";
@@ -56,9 +56,9 @@ const BuyPlayerPanel:FunctionComponent<{
                 labelId="select-player-type-label"
                 value={realValue}
                 style={{minWidth: 190}}
-                onChange={(e) => {
+                onChange={(e: ChangeEvent<{name?: string, value: any}>) => {
                     e.persist();
-                    setSelectedPlayer(`${e.target.value}`)
+                    setSelectedPlayer(e.target.value)
             }}>
                 {playerSelects}
             </Select>
