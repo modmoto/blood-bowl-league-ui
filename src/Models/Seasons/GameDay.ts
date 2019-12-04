@@ -1,5 +1,10 @@
 import {Matchup} from "./Matchup";
 
-export interface GameDay {
-    matchups: Matchup[];
+export class GameDay {
+
+    constructor(matchups: Matchup[]) {
+        this.Matchups = matchups;
+    }
+
+    Matchups: Matchup[];
 }
