@@ -14,13 +14,14 @@ import TeamManagementPage from "./TeamManagementPage/TeamManagementPage";
 import GeneralErrorDialog from "./GeneralErrorDialog";
 import {toAction} from "./helpers";
 import {UpcomingGamesRequestedAction} from "./UpcomingGames/UpcomingGameActions";
+import {AllRacesRequestedAction, FetchTeamRequestedAction} from "./TeamManagementPage/TeamManagementActions";
 
 function AppContent() {
     const dispatch = useDispatch();
     const { t } = useTranslation();
 
     useEffect(() => {
-        dispatch({type: 'FETCH_TEAM_REQUESTED', payload: { teamId: '406d35ee-421a-4d45-9f34-1834d5acd215' }})
+        dispatch(toAction(new FetchTeamRequestedAction('406d35ee-421a-4d45-9f34-1834d5acd215')))
     }, [dispatch]);
 
     useEffect(() => {
@@ -29,7 +30,7 @@ function AppContent() {
     }, [dispatch]);
 
     useEffect(() => {
-        dispatch({type: 'ALL_RACES_REQUESTED'})
+        dispatch(toAction(new AllRacesRequestedAction()))
     }, [dispatch]);
 
     const changeLanguage = (lng: string) => {

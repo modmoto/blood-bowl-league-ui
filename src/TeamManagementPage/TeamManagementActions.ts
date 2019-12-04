@@ -30,9 +30,10 @@ export class FetchTeamRequestedAction implements ReduxActionsBase {
         teamId: string;
     };
 
-
-    constructor(payload: { teamId: string }) {
-        this.payload = payload;
+    constructor(teamId: string) {
+        this.payload = {
+            teamId
+        };
     }
 }
 
@@ -50,8 +51,9 @@ export class AllRacesSucceededAction implements ReduxActionsBase {
     };
 }
 
-export class AllRacesRequestedAction {
+export class AllRacesRequestedAction implements ReduxActionsBase {
     readonly type: typeof ALL_RACES_REQUESTED = ALL_RACES_REQUESTED;
+    readonly payload: any = {};
 }
 
 export class BuyPlayerSucceededAction implements ReduxActionsBase {
