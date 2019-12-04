@@ -37,7 +37,6 @@ const BuyPlayerPanel:FunctionComponent<{
             type,
             fullTeam.teamId,
             new Player(
-                // @ts-ignore
                 new PlayerConfig(allowedPlayer.playerStats, allowedPlayer.startingSkills, allowedPlayer.playerTypeId),
                 allowedPlayer.startingSkills.map(s => s.skillId),
                 0,
