@@ -29,17 +29,17 @@ const BuyPlayerPanel:FunctionComponent<{
     const startingPlayer = allowedPlayers ? allowedPlayers[0].playerTypeId : '';
     const realValue = (selectedPlayerType !== '') ? selectedPlayerType : startingPlayer;
 
-    const onBuyPlayerClick = (type: string) => {
-        const allowedPlayer = raceOfPlayer.allowedPlayers.filter(p => p.playerTypeId === type)[0];
+    const onBuyPlayerClick = (selectedPlayerType: string) => {
+        const allowedPlayer = raceOfPlayer.allowedPlayers.filter(p => p.playerTypeId === selectedPlayerType)[0];
         const newAction = new BuyPlayerRequestedAction(
             fullTeam.version,
-            type,
+            selectedPlayerType,
             fullTeam.teamId,
             new Player(
                 new PlayerConfig(allowedPlayer.playerStats, allowedPlayer.startingSkills, allowedPlayer.playerTypeId),
                 allowedPlayer.startingSkills.map(s => s.skillId),
                 0,
-                type),
+                selectedPlayerType),
             allowedPlayer.cost.value
         );
         dispatch(toAction(newAction));
