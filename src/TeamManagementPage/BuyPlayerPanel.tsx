@@ -13,6 +13,7 @@ import {CombinedStates} from "../CombinedStates";
 import {BuyPlayerRequestedAction} from "./TeamManagementActions";
 import {Player} from "../Models/Players/Player";
 import {toAction} from "../helpers";
+import {PlayerConfig} from "../Models/Players/PlayerConfig";
 
 const BuyPlayerPanel:FunctionComponent<{
     races: Race[]
@@ -30,17 +31,18 @@ const BuyPlayerPanel:FunctionComponent<{
     const realValue = (selectedPlayerType !== '') ? selectedPlayerType : startingPlayer;
 
     const onBuyPlayerClick = (type: string) => {
-        const playerConfig = raceOfPlayer.allowedPlayers.filter(p => p.playerTypeId === type)[0];
+        const allowedPlayer = raceOfPlayer.allowedPlayers.filter(p => p.playerTypeId === type)[0];
         const newAction = new BuyPlayerRequestedAction(
             fullTeam.version,
             type,
             fullTeam.teamId,
             new Player(
-                playerConfig,
-                playerConfig.startingSkills.map(s => s.skillId),
+                // @ts-ignore
+                new PlayerConfig(allowedPlayer.playerStats, allowedPlayer.startingSkills, allowedPlayer.playerTypeId),
+                allowedPlayer.startingSkills.map(s => s.skillId),
                 0,
                 type),
-            40000
+            allowedPlayer.cost.value
         );
         dispatch(toAction(newAction));
     };
