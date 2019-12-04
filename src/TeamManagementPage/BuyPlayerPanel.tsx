@@ -6,10 +6,9 @@ import {useTranslation} from "react-i18next";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Box from "@material-ui/core/Box";
-import {connect, useDispatch} from "react-redux";
+import { useDispatch} from "react-redux";
 import {FullTeam} from "../Models/Teams/FullTeam";
 import {Race} from "../Models/Races/Race";
-import {CombinedStates} from "../CombinedStates";
 import {BuyPlayerRequestedAction} from "./TeamManagementActions";
 import {Player} from "../Models/Players/Player";
 import {toAction} from "../helpers";
@@ -69,12 +68,4 @@ const BuyPlayerPanel:FunctionComponent<{
     )
 };
 
-function mapStateToProps(state: CombinedStates) {
-    const { team, races } = state.teamState;
-    return {
-        team,
-        races
-    }
-}
-
-export default connect(mapStateToProps)(BuyPlayerPanel)
+export default (BuyPlayerPanel)
