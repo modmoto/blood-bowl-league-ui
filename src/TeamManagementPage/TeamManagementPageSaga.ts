@@ -24,13 +24,14 @@ export function* fetchTeamSaga() {
 function* buyPlayerFunc(action: BuyPlayerRequestedAction) {
     const payload = action.payload;
     const playerToBuy = payload.playerToBuy;
+    const playerCosts = payload.playerCosts;
     const player = yield call(buyPlayer, payload.teamId, payload.playerTypeId, payload.teamVersion);
 
     if (!player) return;
     playerToBuy.playerId = player.playerId;
     playerToBuy.playerPositionNumber = player.playerPositionNumber;
 
-    const newAction = new BuyPlayerSucceededAction(playerToBuy);
+    const newAction = new BuyPlayerSucceededAction(playerToBuy, playerCosts);
     yield put(toAction(newAction));
 }
 

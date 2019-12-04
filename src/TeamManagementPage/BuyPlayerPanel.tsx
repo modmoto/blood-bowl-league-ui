@@ -39,7 +39,8 @@ const BuyPlayerPanel:FunctionComponent<{
                 playerConfig,
                 playerConfig.startingSkills.map(s => s.skillId),
                 0,
-                type)
+                type),
+            40000
         );
         dispatch(toAction(newAction));
     };

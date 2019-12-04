@@ -47,9 +47,11 @@ export default function teamManagementPageReducer(
             };
         case BUY_PLAYER_SUCEEDED:
             const player = action.payload.playerToBuy;
+            const costs = action.payload.playerCosts;
             const team = state.team;
             team.playerList.push(player);
             team.team.version = team.team.version + 1;
+            team.team.teamChest.value = team.team.teamChest.value - costs;
 
             return {
                 ...state,

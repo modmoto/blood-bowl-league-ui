@@ -59,13 +59,15 @@ export class AllRacesRequestedAction implements ReduxActionsBase {
 export class BuyPlayerSucceededAction implements ReduxActionsBase {
     readonly type: typeof BUY_PLAYER_SUCEEDED = BUY_PLAYER_SUCEEDED;
 
-    constructor(playerToBuy: Player) {
+    constructor(playerToBuy: Player, playerCosts: number) {
         this.payload = {
             playerToBuy,
+            playerCosts
         };
     }
 
     readonly payload: {
+        playerCosts: number;
         playerToBuy: Player;
     };
 }
@@ -73,16 +75,18 @@ export class BuyPlayerSucceededAction implements ReduxActionsBase {
 export class BuyPlayerRequestedAction implements ReduxActionsBase {
     readonly type: typeof BUY_PLAYER_REQUESTED = BUY_PLAYER_REQUESTED;
 
-    constructor(teamVersion: number, playerTypeId: string, teamId: string, playerToBuy: Player) {
+    constructor(teamVersion: number, playerTypeId: string, teamId: string, playerToBuy: Player, playerCosts: number) {
         this.payload = {
             teamId,
             teamVersion,
             playerTypeId,
-            playerToBuy
+            playerToBuy,
+            playerCosts
         };
     }
 
     readonly payload: {
+        playerCosts: number;
         teamVersion: number;
         playerTypeId: string;
         teamId: string;
