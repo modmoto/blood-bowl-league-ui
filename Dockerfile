@@ -2,7 +2,7 @@
 FROM node:12
 WORKDIR /app
 COPY . ./
-RUN yarn
+RUN yarn --production
 RUN yarn build --production
 
 EXPOSE 80
