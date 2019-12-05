@@ -1,10 +1,4 @@
-export class Matchup {
-
-    constructor(homeTeamName: string, guestTeamName: string) {
-        this.HomeTeamName = homeTeamName;
-        this.GuestTeamName = guestTeamName;
-    }
-
-    HomeTeamName: string;
-    GuestTeamName: string;
+export interface Matchup {
+    homeTeamName: string;
+    guestTeamName: string;
 }
