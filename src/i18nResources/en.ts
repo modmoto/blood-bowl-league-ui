@@ -35,6 +35,7 @@ const en = {
             "PlayerSkills": "Skills",
             "BuyPlayerTypeLabel": "Playertype",
             "BuyPlayerButton": "Buy player",
+            "ChallengeTeam": "Challenge team",
         },
 
         playerTypes: {
@@ -67,6 +68,6 @@ const en = {
             "Humans": "Humans",
         }
     }
-}
+};
 
 export default en

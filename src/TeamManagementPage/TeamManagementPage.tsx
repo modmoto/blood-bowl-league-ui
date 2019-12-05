@@ -25,7 +25,7 @@ const TeamManagementPage:FunctionComponent<{
 
     useEffect(() => {
         dispatch(toAction(new FetchTeamRequestedAction(id ? id : '')))
-    }, [dispatch]);
+    }, [dispatch, id]);
 
     if (loading || !team) return <LoadingIndicator />;
 
@@ -36,7 +36,7 @@ const TeamManagementPage:FunctionComponent<{
         <Box mt={5}>
             <div>
                 <Typography style={{float: 'left'}} variant='h4'>{fullTeam.teamName} ({t("races." + fullTeam.raceId)})</Typography>
-                <Button style={{float: 'right'}} variant="contained">Herausfordern</Button>
+                <Button style={{float: 'right'}} variant="contained">{t("teamPage.ChallengeTeam")}</Button>
             </div>
             <PlayerListForTeam playerList={team.playerList}/>
             <BuyPlayerPanel team={team} races={races}/>

@@ -35,6 +35,7 @@ const de = {
             "PlayerSkills": "Skills",
             "BuyPlayerTypeLabel": "Spielertyp",
             "BuyPlayerButton": "Kaufe Spieler",
+            "ChallengeTeam": "Team herausfordern",
         },
 
         playerTypes: {
@@ -67,6 +68,6 @@ const de = {
             "Humans": "Menschen",
         }
     }
-}
+};
 
 export default de
