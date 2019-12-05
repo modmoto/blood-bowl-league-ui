@@ -9,5 +9,5 @@ it('returns a flat object from Action', () => {
 
 it('does return the current browser language', () => {
     const browserLanguage = getBrowserLanguage();
-    expect(browserLanguage).toBe('end');
+    expect(browserLanguage).toBe('en');
 });
