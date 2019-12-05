@@ -12,6 +12,7 @@ import {Race} from "../Models/Races/Race";
 import {toAction} from "../helpers";
 import {FetchTeamRequestedAction} from "./TeamManagementActions";
 import { useParams } from 'react-router-dom';
+import Button from "@material-ui/core/Button";
 
 const TeamManagementPage:FunctionComponent<{
     loading: boolean
@@ -32,9 +33,11 @@ const TeamManagementPage:FunctionComponent<{
     const teamMoney = fullTeam.teamChest.value;
 
     return (
-        <Box mt={3}>
-            <Typography variant='h4'>{fullTeam.teamName} ({t("races." + fullTeam.raceId)})</Typography>
-
+        <Box mt={5}>
+            <div>
+                <Typography style={{float: 'left'}} variant='h4'>{fullTeam.teamName} ({t("races." + fullTeam.raceId)})</Typography>
+                <Button style={{float: 'right'}} variant="contained">Herausfordern</Button>
+            </div>
             <PlayerListForTeam playerList={team.playerList}/>
             <BuyPlayerPanel team={team} races={races}/>
             <Box pt={3}>
