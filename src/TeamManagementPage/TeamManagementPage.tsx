@@ -1,5 +1,5 @@
-import React, {FunctionComponent} from 'react';
-import {connect} from "react-redux";
+import React, {FunctionComponent, useEffect} from 'react';
+import {connect, useDispatch} from "react-redux";
 
 import {Box, Typography} from "@material-ui/core";
 import {LoadingIndicator} from "../UtilComponents/LoadingIndicator";
@@ -9,6 +9,9 @@ import PlayerListForTeam from "./PlayerListForTeam";
 import {CombinedStates} from "../CombinedStates";
 import {FullTeam} from "../Models/Teams/FullTeam";
 import {Race} from "../Models/Races/Race";
+import {toAction} from "../helpers";
+import {FetchTeamRequestedAction} from "./TeamManagementActions";
+import { useParams } from 'react-router-dom';
 
 const TeamManagementPage:FunctionComponent<{
     loading: boolean
@@ -16,6 +19,12 @@ const TeamManagementPage:FunctionComponent<{
     races: Race[]
 }> = ({ loading, team, races }) => {
     const { t } = useTranslation();
+    const dispatch = useDispatch();
+    const { id } = useParams();
+
+    useEffect(() => {
+        dispatch(toAction(new FetchTeamRequestedAction(id ? id : '')))
+    }, [dispatch]);
 
     if (loading || !team) return <LoadingIndicator />;
 

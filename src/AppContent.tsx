@@ -14,15 +14,11 @@ import TeamManagementPage from "./TeamManagementPage/TeamManagementPage";
 import GeneralErrorDialog from "./GeneralErrorDialog";
 import {toAction} from "./helpers";
 import {UpcomingGamesRequestedAction} from "./UpcomingGames/UpcomingGameActions";
-import {AllRacesRequestedAction, FetchTeamRequestedAction} from "./TeamManagementPage/TeamManagementActions";
+import {AllRacesRequestedAction} from "./TeamManagementPage/TeamManagementActions";
 
 function AppContent() {
     const dispatch = useDispatch();
     const { t } = useTranslation();
-
-    useEffect(() => {
-        dispatch(toAction(new FetchTeamRequestedAction('406d35ee-421a-4d45-9f34-1834d5acd215')))
-    }, [dispatch]);
 
     useEffect(() => {
         const action = new UpcomingGamesRequestedAction('7a097eae-be35-4b4d-a23d-98a6b57534f3');
@@ -37,6 +33,8 @@ function AppContent() {
         i18n.changeLanguage(lng);
     };
 
+    const myTeamId = '406d35ee-421a-4d45-9f34-1834d5acd215';
+
     return(
         <>
             <GeneralErrorDialog/>
@@ -44,7 +42,7 @@ function AppContent() {
                 <Toolbar>
                     <ToolbarButton to={'/'}>KABBL</ToolbarButton>
                     <ToolbarButton to={'/upcoming-games'}>{t("appContent.GameDays")}</ToolbarButton>
-                    <ToolbarButton to={'/my-team'}>{t("appContent.MyTeam")}</ToolbarButton>
+                    <ToolbarButton to={'/teams/' + myTeamId}>{t("appContent.MyTeam")}</ToolbarButton>
                     <div style={{ marginLeft: 'auto' }}>
                         <Button onClick={() => changeLanguage('de')}>DE</Button>
                         <Button onClick={() => changeLanguage('en')}>EN</Button>
@@ -57,7 +55,7 @@ function AppContent() {
                     <Route path="/upcoming-games">
                         <UpcomingGamePage />
                     </Route>
-                    <Route path="/my-team">
+                    <Route path="/teams/:id">
                         <TeamManagementPage />
                     </Route>
                     <Route path="/">
