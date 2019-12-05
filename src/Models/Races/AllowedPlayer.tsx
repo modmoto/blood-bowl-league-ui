@@ -7,22 +7,13 @@ class Skill {
     }
 }
 
-class GoldCoins {
-
-    constructor(value: number) {
-        this.value = value;
-    }
-
-    value: number
-}
-
 export class AllowedPlayer {
     startingSkills: Skill[];
     playerTypeId: string;
-    cost: GoldCoins;
+    cost: number;
     playerStats: PlayerStats;
 
-    constructor(startingSkills: Skill[], playerTypeId: string, cost: GoldCoins, playerStats: PlayerStats) {
+    constructor(startingSkills: Skill[], playerTypeId: string, cost: number, playerStats: PlayerStats) {
         this.startingSkills = startingSkills;
         this.playerTypeId = playerTypeId;
         this.cost = cost;

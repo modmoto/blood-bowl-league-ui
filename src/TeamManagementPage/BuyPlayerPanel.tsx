@@ -40,7 +40,7 @@ const BuyPlayerPanel:FunctionComponent<{
                 allowedPlayer.startingSkills.map(s => s.skillId),
                 0,
                 selectedPlayerType),
-            allowedPlayer.cost.value
+            allowedPlayer.cost
         );
         dispatch(toAction(newAction));
     };
