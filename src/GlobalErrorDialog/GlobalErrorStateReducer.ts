@@ -1,4 +1,4 @@
-import {ReduxActionsBase} from "./ReduxActionsBase";
+import {ReduxActionsBase} from "../ReduxActionsBase";
 
 export default function globalErrorStateReducer(state = initialState, action: GlobalStateActionTypes): GlobalState {
 

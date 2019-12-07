@@ -1,5 +1,5 @@
 import {UpcomingGameState} from "./UpcomingGames/UpcomingGamesReducer";
-import {GlobalState} from "./GlobalErrorStateReducer";
+import {GlobalState} from "./GlobalErrorDialog/GlobalErrorStateReducer";
 
 export interface CombinedStates {
     upcomingGameState: UpcomingGameState;

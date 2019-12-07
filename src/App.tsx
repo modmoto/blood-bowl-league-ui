@@ -10,7 +10,7 @@ import upcomingGamesReducer from "./UpcomingGames/UpcomingGamesReducer";
 import AppContent from "./AppContent";
 import teamManagementPageReducer from "./TeamManagementPage/TeamManagementPageReducer";
 import {buyPlayerSaga, fetchRacesSaga, fetchTeamSaga} from "./TeamManagementPage/TeamManagementPageSaga";
-import globalErrorStateReducer from "./GlobalErrorStateReducer";
+import globalErrorStateReducer from "./GlobalErrorDialog/GlobalErrorStateReducer";
 
 const theme = createMuiTheme({
     palette: {

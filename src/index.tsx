@@ -4,7 +4,7 @@ import App from './App';
 
 import i18n from "i18next";
 import {initReactI18next} from "react-i18next";
-import languages from "./i18nResources/languages";
+import languages from "./i18n/languages";
 import {getBrowserLanguage} from "./helpers";
 
 const language = getBrowserLanguage();

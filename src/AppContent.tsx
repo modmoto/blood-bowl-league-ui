@@ -11,7 +11,7 @@ import Container from "@material-ui/core/Container";
 import {useDispatch} from 'react-redux'
 import i18n from "i18next";
 import TeamManagementPage from "./TeamManagementPage/TeamManagementPage";
-import GeneralErrorDialog from "./GeneralErrorDialog";
+import GeneralErrorDialog from "./GlobalErrorDialog/GeneralErrorDialog";
 import {toAction} from "./helpers";
 import {UpcomingGamesRequestedAction} from "./UpcomingGames/UpcomingGameActions";
 import {AllRacesRequestedAction} from "./TeamManagementPage/TeamManagementActions";

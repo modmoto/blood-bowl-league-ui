@@ -4,7 +4,7 @@ import {
     NotFoundResponse,
     UnknownErrorResponse,
     ValidationErrorResponse
-} from "../GlobalErrorStateReducer";
+} from "../GlobalErrorDialog/GlobalErrorStateReducer";
 
 export async function fetchJson(baseUrl: string, path: string) {
     const url = `${baseUrl}${path}`;

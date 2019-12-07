@@ -7,9 +7,9 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import {useTranslation} from "react-i18next";
 import {connect, useDispatch} from "react-redux";
-import {toAction} from "./helpers";
+import {toAction} from "../helpers";
 import {GlobalErrorDismissedAction, GlobalState, ResultObject, ValidationDetail} from "./GlobalErrorStateReducer";
-import {CombinedStates} from "./CombinedStates";
+import {CombinedStates} from "../CombinedStates";
 
 const GeneralErrorDialog:FunctionComponent<{ result: ResultObject, errorOccured: boolean }>
     = ({ result = null, errorOccured = false }) => {
