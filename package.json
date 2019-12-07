@@ -25,8 +25,15 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll=false",
+    "test": "react-scripts test",
+    "test-ci": "react-scripts test --watchAll=false --collectCoverage=true --env=jsdom --testResultsProcessor=node_modules/jest-sonar-reporter/index.js",
     "eject": "react-scripts eject"
+  },
+  "jestSonar": {
+    "sonar56x": true,
+    "reportPath": "testResults",
+    "reportFile": "sonar-report.xml",
+    "indent": 4
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,5 +49,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "jest-sonar-reporter": "^2.0.0"
   }
 }
