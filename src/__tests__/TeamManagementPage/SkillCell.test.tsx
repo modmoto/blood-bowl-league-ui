@@ -35,4 +35,11 @@ describe('SkillCell', () => {
         expect(oldSkillsColor).toBeUndefined();
         expect(innerText).toBe('skills.Block');
     });
+
+    it('empty lists produce no empty containers', () => {
+        const wrapper = mount(<SkillCell skills={[]} startingSkills={[]}/>);
+        const boxes = wrapper.find(Box).get(0);
+
+        expect(boxes).toBeUndefined();
+    });
 });

@@ -11,16 +11,22 @@ const SkillCell:FunctionComponent<{startingSkills: Skill[], skills: string[]}> =
     const additionalSkills = skills.filter(s => startingSkillIds.indexOf(s) < 0);
     const startingSkillString = startingSkills.map(s => t("skills." + s.skillId)).join(', ');
     const additionalSkillString = additionalSkills.map(s => t("skills." + s)).join(', ');
+    const boxStartingSkills = startingSkills.length > 0
+        ? <Box>
+            {startingSkillString}
+          </Box>
+        : null;
+    const boxAdditionalSkills = additionalSkills.length > 0
+        ? <Box color={green[600]}>
+            {additionalSkillString}
+          </Box>
+        : null;
     return(
         <>
-            <Box>
-                {startingSkillString}
-            </Box>
-            <Box color={green[600]}>
-                {additionalSkillString}
-            </Box>
+            {boxStartingSkills}
+            {boxAdditionalSkills}
         </>
     )
-}
+};
 
 export default (SkillCell)
