@@ -7,17 +7,17 @@ import {Skill} from "../Models/Players/Skill";
 const SkillCell:FunctionComponent<{startingSkills: Skill[], skills: string[]}> = ({ startingSkills, skills }) => {
     const { t } = useTranslation();
 
-    var startingSkillIds = startingSkills.map(s => s.skillId);
+    const startingSkillIds = startingSkills.map(s => s.skillId);
     const additionalSkills = skills.filter(s => startingSkillIds.indexOf(s) < 0);
-    const startingSkilltring = startingSkills.map(s => t("skills." + s.skillId)).join(', ');
-    const additionalSkillstring = additionalSkills.map(s => t("skills." + s)).join(', ');
+    const startingSkillString = startingSkills.map(s => t("skills." + s.skillId)).join(', ');
+    const additionalSkillString = additionalSkills.map(s => t("skills." + s)).join(', ');
     return(
         <>
             <Box>
-                {startingSkilltring}
+                {startingSkillString}
             </Box>
             <Box color={green[600]}>
-                {additionalSkillstring}
+                {additionalSkillString}
             </Box>
         </>
     )

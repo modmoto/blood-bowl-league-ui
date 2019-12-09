@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlayerRow snapshot renders 1`] = `
+<tr
+  className="MuiTableRow-root"
+>
+  <th
+    aria-sort={null}
+    className="MuiTableCell-root"
+    scope="row"
+  >
+    0
+  </th>
+  <td
+    aria-sort={null}
+    className="MuiTableCell-root"
+  >
+    playerTypes.HU_Blitzer
+  </td>
+  <td
+    aria-sort={null}
+    className="MuiTableCell-root"
+  >
+    7
+  </td>
+  <td
+    aria-sort={null}
+    className="MuiTableCell-root"
+  >
+    3
+  </td>
+  <td
+    aria-sort={null}
+    className="MuiTableCell-root"
+  >
+    4
+  </td>
+  <td
+    aria-sort={null}
+    className="MuiTableCell-root"
+  >
+    8
+  </td>
+  <td
+    aria-sort={null}
+    className="MuiTableCell-root"
+  >
+    <div
+      className="MuiBox-root MuiBox-root-19"
+    >
+      skills.Block
+    </div>
+    <div
+      className="MuiBox-root MuiBox-root-20"
+    >
+      skills.New_skill1, skills.New_skill2
+    </div>
+  </td>
+  <td
+    aria-sort={null}
+    className="MuiTableCell-root"
+  >
+    0
+     / 
+    6
+  </td>
+</tr>
+`;

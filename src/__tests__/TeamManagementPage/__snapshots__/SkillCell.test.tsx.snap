@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlayerRow snapshot renders 1`] = `
+Array [
+  <div
+    className="MuiBox-root MuiBox-root-2"
+  >
+    skills.Block
+  </div>,
+  <div
+    className="MuiBox-root MuiBox-root-3"
+  >
+    skills.New_skill1, skills.New_skill2
+  </div>,
+]
+`;
+
+exports[`SkillCell snapshot renders 1`] = `
+Array [
+  <div
+    className="MuiBox-root MuiBox-root-2"
+  >
+    skills.Block
+  </div>,
+  <div
+    className="MuiBox-root MuiBox-root-3"
+  >
+    skills.New_skill1, skills.New_skill2
+  </div>,
+]
+`;
+
+exports[`snapshot renders 1`] = `
+Array [
+  <div
+    className="MuiBox-root MuiBox-root-2"
+  >
+    skills.Block
+  </div>,
+  <div
+    className="MuiBox-root MuiBox-root-3"
+  >
+    skills.New_skill1, skills.New_skill2
+  </div>,
+]
+`;
