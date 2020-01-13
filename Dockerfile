@@ -1,5 +1,5 @@
 # Stage 1
-FROM node:12
+FROM arm32v7/node:12
 WORKDIR /app
 COPY . ./
 RUN yarn
