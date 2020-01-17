@@ -1,12 +1,13 @@
 # build environment
-FROM node:12.2.0-alpine as build
+FROM node:12.14.1-alpine as build
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
+COPY yarn.lock /app/yarn.lock
 COPY package.json /app/package.json
-RUN npm install --silent
-RUN npm install react-scripts@3.0.1 -g --silent
+RUN yarn
+RUN yarn react-scripts
 COPY . /app
-RUN npm run build
+RUN yarn build
 
 # production environment
 FROM nginx:1.17.7-alpine
