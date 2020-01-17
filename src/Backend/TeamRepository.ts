@@ -2,10 +2,9 @@ import {fetchJson, sendJson} from "./RepositoryBase";
 import {FullTeam} from "../Models/Teams/FullTeam";
 import {Race} from "../Models/Races/Race";
 
-const ReadURl = 'https://teams-readhost.herokuapp.com/api';
-const WriteUrl = 'https://teams-host.herokuapp.com/api';
-//const ReadURl = 'http://localhost:5000/api'
-//const WriteUrl = 'http://localhost:5001/api'
+
+const ReadURl = 'http://h2865571.stratoserver.net/:5000/api';
+const WriteUrl = 'http://h2865571.stratoserver.net/:6001/api';
 
 export async function fetchTeamCall(teamId: string): Promise<FullTeam> {
     return await fetchJson(ReadURl, "/Teams/" + teamId + "/full")
