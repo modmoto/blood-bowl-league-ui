@@ -3,8 +3,8 @@ import {FullTeam} from "../Models/Teams/FullTeam";
 import {Race} from "../Models/Races/Race";
 
 
-const ReadURl = 'http://h2865571.stratoserver.net:5000/api';
-const WriteUrl = 'http://h2865571.stratoserver.net:6001/api';
+const ReadURl = 'http://teams-readhost.blood-bowl-league.com/api';
+const WriteUrl = 'http://teams-host.blood-bowl-league.com/api';
 
 export async function fetchTeamCall(teamId: string): Promise<FullTeam> {
     return await fetchJson(ReadURl, "/Teams/" + teamId + "/full")
