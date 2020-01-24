@@ -23,7 +23,7 @@
     "typescript": "^3.7.5"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "chmod +x ./env.sh && ./env.sh && cp env-config.js ./public/ && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test-ci": "react-scripts test --watchAll=false --env=jsdom --collectCoverage=true --collectCoverageFrom=\"!**/{i18n,__snapshots__}/**\"",

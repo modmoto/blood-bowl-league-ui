@@ -3,8 +3,10 @@ import {FullTeam} from "../Models/Teams/FullTeam";
 import {Race} from "../Models/Races/Race";
 
 
-const ReadURl = 'http://teams-readhost.blodd-bowl-league.com/api';
-const WriteUrl = 'http://teams-host.blodd-bowl-league.com/api';
+// @ts-ignore
+const ReadURl = window._env_.TEAMS_READHOST;
+// @ts-ignore
+const WriteUrl = window._env_.TEAMS_HOST;
 
 export async function fetchTeamCall(teamId: string): Promise<FullTeam> {
     return await fetchJson(ReadURl, "/Teams/" + teamId + "/full")
